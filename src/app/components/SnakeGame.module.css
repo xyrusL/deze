@@ -1,0 +1,265 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+    padding: 0 1rem;
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #00f3ff;
+    letter-spacing: 0.1em;
+    text-shadow: 0 0 20px rgba(0, 243, 255, 0.5);
+}
+
+.score {
+    font-size: 1rem;
+    color: #bc13fe;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+}
+
+.gameWrapper {
+    position: relative;
+    border: 2px solid rgba(0, 243, 255, 0.3);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(0, 243, 255, 0.1);
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 1;
+}
+
+.canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    backdrop-filter: blur(5px);
+    padding: 1rem;
+}
+
+.startText,
+.gameOverText {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-align: center;
+}
+
+.gameOverText {
+    color: #ff4444;
+    text-shadow: 0 0 20px rgba(255, 68, 68, 0.5);
+}
+
+.finalScore {
+    font-size: 1.2rem;
+    color: #bc13fe;
+}
+
+.playButton {
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #000;
+    background: linear-gradient(135deg, #00f3ff, #00d4ff);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(0, 243, 255, 0.3);
+}
+
+.playButton:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(0, 243, 255, 0.5);
+}
+
+.playButton:active {
+    transform: scale(0.98);
+}
+
+.instructions {
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+/* Mobile Touch Controls - Hidden on desktop */
+.mobileControls {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.controlRow {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.controlBtn {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+    border: 2px solid rgba(0, 243, 255, 0.4);
+    border-radius: 12px;
+    background: rgba(0, 243, 255, 0.1);
+    color: #00f3ff;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.controlBtn:hover {
+    background: rgba(0, 243, 255, 0.2);
+    border-color: rgba(0, 243, 255, 0.6);
+}
+
+.controlBtn:active {
+    background: rgba(0, 243, 255, 0.3);
+    transform: scale(0.95);
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    .container {
+        gap: 1rem;
+    }
+
+    .header {
+        max-width: 350px;
+    }
+
+    .gameWrapper {
+        max-width: 350px;
+    }
+
+    .title {
+        font-size: 1.3rem;
+    }
+
+    .startText,
+    .gameOverText {
+        font-size: 1.75rem;
+    }
+
+    /* Show mobile controls on tablet */
+    .mobileControls {
+        display: flex;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .container {
+        gap: 0.75rem;
+    }
+
+    .header {
+        max-width: 300px;
+        padding: 0;
+    }
+
+    .gameWrapper {
+        max-width: 300px;
+    }
+
+    .title {
+        font-size: 1.2rem;
+    }
+
+    .score {
+        font-size: 0.9rem;
+    }
+
+    .startText,
+    .gameOverText {
+        font-size: 1.5rem;
+    }
+
+    .finalScore {
+        font-size: 1rem;
+    }
+
+    .playButton {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .instructions {
+        font-size: 0.75rem;
+    }
+
+    /* Mobile controls */
+    .mobileControls {
+        display: flex;
+    }
+
+    .controlBtn {
+        width: 55px;
+        height: 55px;
+        font-size: 1.3rem;
+    }
+}
+
+/* Very small screens */
+@media (max-width: 360px) {
+    .header {
+        max-width: 280px;
+    }
+
+    .gameWrapper {
+        max-width: 280px;
+    }
+
+    .title {
+        font-size: 1rem;
+    }
+
+    .score {
+        font-size: 0.85rem;
+    }
+
+    .controlBtn {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+}

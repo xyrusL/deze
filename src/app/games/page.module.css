@@ -1,0 +1,74 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+    background: radial-gradient(circle at center, #0a0a0a 0%, #000000 100%);
+    position: relative;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    max-width: 600px;
+}
+
+.backLink {
+    font-size: 0.9rem;
+    color: #888;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    letter-spacing: 0.1em;
+}
+
+.backLink:hover {
+    color: #00f3ff;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    background: linear-gradient(to right, #fff, #aaa);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-transform: uppercase;
+}
+
+.gameContainer {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.hint {
+    margin-top: 2rem;
+    color: #555;
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+}
+
+@media (max-width: 480px) {
+    .main {
+        padding: 1.5rem;
+    }
+
+    .header {
+        gap: 1rem;
+    }
+
+    .title {
+        font-size: 1.8rem;
+    }
+
+    .backLink {
+        font-size: 0.8rem;
+    }
+}
