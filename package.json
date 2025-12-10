@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "minify:css": "cleancss -o public/assets/rio/style/animixplay.css public/assets/rio/style/src/animixplay.css",
+    "minify:css": "cleancss -o public/assets/rio/style/min/animixplay.css public/assets/rio/style/raw/animixplay.css",
     "build": "npm run minify:css && next build",
     "start": "next start",
     "lint": "eslint"
