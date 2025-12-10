@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "minify:css": "cleancss -o public/assets/rio/style/animixplay.css public/assets/rio/style/src/animixplay.css",
+    "build": "npm run minify:css && next build",
     "start": "next start",
     "lint": "eslint"
   },
@@ -17,6 +18,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "clean-css-cli": "^5.6.3",
     "eslint": "^9",
     "eslint-config-next": "16.0.8",
     "typescript": "^5"
