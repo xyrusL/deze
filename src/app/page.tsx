@@ -171,6 +171,22 @@ export default function Home() {
           </p>
         </button>
 
+        {/* Papa's Electronic Repair Shop Card */}
+        <button
+          onClick={() => openModal("https://papaselectronicrepairshop.deze.me", "Papa's Electronic Repair Shop")}
+          className="group p-5 sm:p-6 rounded-2xl bg-black/60 backdrop-blur-xl border border-yellow-500/30 hover:border-yellow-400 hover:bg-black/80 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_40px_rgba(234,179,8,0.3)] text-left cursor-pointer"
+        >
+          <h2 className="text-lg sm:text-xl font-semibold mb-3 flex items-center gap-3 font-mono text-white">
+            Papa&apos;s Repair
+            <svg className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0 text-yellow-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+            </svg>
+          </h2>
+          <p className="text-gray-300 text-xs sm:text-sm leading-relaxed font-mono break-words">
+            Trusted electronics repair service since 2021. Quality you can trust.
+          </p>
+        </button>
+
         {/* Arcade Card */}
         <a
           href="/games"
