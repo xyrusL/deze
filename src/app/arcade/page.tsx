@@ -37,6 +37,11 @@ const games = [
     description: "Configure digits, operators, timer, and questions for a focused mental-math speed run.",
     href: "/arcade/mental-math-practice",
   },
+  {
+    title: "Word Guess",
+    description: "Unscramble an API-fetched word, submit your guess, track score, and move to the next round.",
+    href: "/arcade/word-guess",
+  },
 ] as const;
 
 export default function ArcadePage() {

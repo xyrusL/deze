@@ -1,0 +1,298 @@
+.container {
+  padding-left: env(safe-area-inset-left, 0px);
+  padding-right: env(safe-area-inset-right, 0px);
+  padding-bottom: calc(0.5rem + env(safe-area-inset-bottom, 0px));
+}
+
+.stageShell {
+  position: relative;
+  width: min(100%, var(--arcade-board-max-width));
+  padding: clamp(0.6rem, 1.6vw, 0.9rem);
+  border-radius: 14px;
+  border: 1px solid rgba(104, 244, 200, 0.35);
+  box-shadow:
+    0 14px 40px rgba(2, 10, 14, 0.6),
+    inset 0 1px 0 rgba(197, 255, 233, 0.12);
+}
+
+.stage {
+  border: 2px solid rgba(108, 221, 255, 0.26);
+  box-shadow: inset 0 0 18px rgba(255, 255, 255, 0.06);
+  background: radial-gradient(circle at top, rgba(24, 83, 122, 0.45), rgba(9, 16, 32, 0.95));
+}
+
+.boardContent {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  padding: clamp(0.9rem, 3vw, 1.4rem);
+}
+
+.card {
+  width: min(100%, 430px);
+  display: grid;
+  gap: 0.85rem;
+  background: rgba(5, 14, 24, 0.76);
+  border: 1px solid rgba(126, 231, 255, 0.3);
+  border-radius: 14px;
+  padding: clamp(0.95rem, 2.3vw, 1.25rem);
+  color: #dff8ff;
+  box-shadow:
+    inset 0 0 0 1px rgba(146, 234, 255, 0.1),
+    0 10px 22px rgba(0, 0, 0, 0.28);
+}
+
+.statsRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.metaPill {
+  margin: 0;
+  border-radius: 999px;
+  border: 1px solid rgba(140, 234, 255, 0.32);
+  background: rgba(8, 21, 34, 0.8);
+  padding: 0.34rem 0.66rem;
+  font-size: 0.77rem;
+  line-height: 1.15;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #d9f5ff;
+  font-weight: 700;
+}
+
+.controlBar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 0.1rem;
+  padding: 0.6rem;
+  border-radius: 12px;
+  border: 1px solid rgba(126, 231, 255, 0.3);
+  background:
+    linear-gradient(145deg, rgba(10, 24, 40, 0.88), rgba(8, 18, 30, 0.86)),
+    radial-gradient(circle at 20% 0%, rgba(126, 231, 255, 0.16), transparent 60%);
+  box-shadow:
+    inset 0 0 0 1px rgba(155, 237, 255, 0.09),
+    0 9px 18px rgba(0, 0, 0, 0.28);
+}
+
+.scrambleSection {
+  display: grid;
+  gap: 0.28rem;
+  padding: 0.72rem;
+  border-radius: 12px;
+  border: 1px solid rgba(142, 233, 255, 0.22);
+  background: linear-gradient(150deg, rgba(9, 24, 38, 0.82), rgba(8, 17, 29, 0.86));
+}
+
+.scrambleLabel {
+  margin: 0;
+  font-size: 0.76rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #bde9f8;
+  font-weight: 700;
+}
+
+.scrambledWord {
+  margin: 0;
+  min-height: 2.2rem;
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  line-height: 1.1;
+  letter-spacing: 0.16em;
+  color: #f2fcff;
+  font-weight: 800;
+  text-transform: lowercase;
+  text-shadow: 0 0 14px rgba(121, 235, 255, 0.22);
+}
+
+.form {
+  display: grid;
+  gap: 0.65rem;
+  padding: 0.72rem;
+  border-radius: 12px;
+  border: 1px solid rgba(126, 231, 255, 0.2);
+  background: rgba(6, 18, 31, 0.58);
+}
+
+.fieldLabel {
+  font-size: 0.78rem;
+  color: #c8edf8;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.input {
+  border-radius: 10px;
+  border: 1px solid rgba(126, 231, 255, 0.35);
+  background: rgba(6, 18, 30, 0.82);
+  color: #eaffff;
+  padding: 0.62rem 0.74rem;
+  font-size: 0.98rem;
+  outline: none;
+}
+
+.input:focus-visible {
+  border-color: rgba(126, 231, 255, 0.75);
+  box-shadow:
+    0 0 0 2px rgba(8, 16, 27, 0.9),
+    0 0 0 4px rgba(126, 231, 255, 0.34);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.primaryButton,
+.secondaryButton,
+.retryButton {
+  border-radius: 999px;
+  padding: 0.6rem 1.04rem;
+  font-size: 0.79rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition:
+    transform 0.12s ease,
+    filter 0.16s ease,
+    box-shadow 0.16s ease;
+}
+
+.primaryButton {
+  border: 1px solid rgba(142, 249, 255, 0.72);
+  background: linear-gradient(145deg, rgba(0, 243, 255, 0.25), rgba(63, 118, 255, 0.2));
+  color: #dbfcff;
+  box-shadow: 0 0 0 1px rgba(126, 231, 255, 0.2);
+}
+
+.primaryButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.primaryButton:not(:disabled):hover,
+.secondaryButton:hover,
+.retryButton:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+}
+
+.primaryButton:focus-visible,
+.secondaryButton:focus-visible,
+.retryButton:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 2px rgba(10, 20, 32, 0.9),
+    0 0 0 4px rgba(126, 231, 255, 0.4);
+}
+
+.secondaryButton,
+.retryButton {
+  border: 1px solid rgba(191, 205, 223, 0.55);
+  background: rgba(22, 28, 44, 0.6);
+  color: #d9e0ef;
+}
+
+.controlPrimaryButton,
+.controlSecondaryButton {
+  border-radius: 999px;
+  padding: 0.62rem 1.06rem;
+  font-size: 0.79rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition:
+    transform 0.12s ease,
+    box-shadow 0.16s ease,
+    border-color 0.16s ease,
+    filter 0.16s ease;
+}
+
+.controlPrimaryButton {
+  border: 1px solid rgba(153, 247, 255, 0.9);
+  background:
+    linear-gradient(145deg, rgba(0, 243, 255, 0.28), rgba(63, 118, 255, 0.24)),
+    linear-gradient(0deg, rgba(10, 28, 44, 0.4), rgba(10, 28, 44, 0.4));
+  color: #e8fdff;
+  box-shadow:
+    0 0 0 1px rgba(121, 246, 255, 0.22),
+    0 0 18px rgba(84, 212, 255, 0.28);
+}
+
+.controlSecondaryButton {
+  border: 1px solid rgba(226, 196, 255, 0.58);
+  background: linear-gradient(145deg, rgba(76, 47, 111, 0.65), rgba(29, 20, 55, 0.7));
+  color: #efe3ff;
+}
+
+.controlPrimaryButton:hover,
+.controlSecondaryButton:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.06);
+}
+
+.controlPrimaryButton:focus-visible,
+.controlSecondaryButton:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 2px rgba(10, 20, 32, 0.85),
+    0 0 0 4px rgba(126, 231, 255, 0.5);
+}
+
+.feedback {
+  margin: 0;
+  min-height: 1.55rem;
+  border-radius: 10px;
+  border: 1px solid rgba(132, 229, 255, 0.2);
+  background: rgba(7, 19, 31, 0.66);
+  padding: 0.54rem 0.62rem;
+  font-size: 0.84rem;
+  line-height: 1.4;
+  color: #d6edf6;
+}
+
+.feedbackNeutral {
+  border-color: rgba(132, 229, 255, 0.2);
+  background: rgba(7, 19, 31, 0.66);
+  color: #d8eef8;
+}
+
+.feedbackSuccess {
+  border-color: rgba(146, 247, 188, 0.38);
+  background: rgba(10, 42, 30, 0.56);
+  color: #9af2bc;
+}
+
+.feedbackError {
+  border-color: rgba(255, 168, 168, 0.4);
+  background: rgba(50, 17, 23, 0.6);
+  color: #ffb8b8;
+}
+
+.retryButton {
+  justify-self: start;
+}
+
+.sidebarList {
+  gap: 0.45rem;
+}
+
+.sidebarListItem {
+  color: #d5eaf3;
+  line-height: 1.42;
+}
+
+.panelText {
+  margin: 0;
+  color: #c7dde7;
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
