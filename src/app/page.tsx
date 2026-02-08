@@ -137,7 +137,7 @@ export default function Home() {
         {/* Watermelon Card */}
         <button
           onClick={() => openModal("https://watermelon.deze.me", "Watermelon")}
-          className="group p-5 sm:p-6 rounded-2xl bg-black/60 backdrop-blur-xl border border-cyan-500/30 hover:border-cyan-400 hover:bg-black/80 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_40px_rgba(0,243,255,0.3)] text-left cursor-pointer"
+          className="group p-5 sm:p-6 rounded-2xl bg-black/60 backdrop-blur-xl border border-cyan-500/30 hover:border-cyan-400 hover:bg-black/80 transition-all duration-500 ease-out hover:-translate-y-2 hover:scale-[1.01] hover:shadow-[0_0_40px_rgba(0,243,255,0.3)] active:scale-[0.99] motion-reduce:transform-none motion-reduce:transition-none text-left cursor-pointer"
         >
           <h2 className="text-lg sm:text-xl font-semibold mb-3 flex items-center gap-3 font-mono text-white">
             Watermelon
@@ -157,7 +157,7 @@ export default function Home() {
         {/* RioAnime Card */}
         <button
           onClick={() => openModal("https://rioanime.deze.me", "RioAnime")}
-          className="group p-5 sm:p-6 rounded-2xl bg-black/60 backdrop-blur-xl border border-purple-500/30 hover:border-purple-400 hover:bg-black/80 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_40px_rgba(188,19,254,0.3)] text-left cursor-pointer"
+          className="group p-5 sm:p-6 rounded-2xl bg-black/60 backdrop-blur-xl border border-purple-500/30 hover:border-purple-400 hover:bg-black/80 transition-all duration-500 ease-out hover:-translate-y-2 hover:scale-[1.01] hover:shadow-[0_0_40px_rgba(188,19,254,0.3)] active:scale-[0.99] motion-reduce:transform-none motion-reduce:transition-none text-left cursor-pointer"
         >
           <h2 className="text-lg sm:text-xl font-semibold mb-3 flex items-center gap-3 font-mono text-white">
             RioAnime
@@ -174,7 +174,7 @@ export default function Home() {
         {/* Papa's Electronic Repair Shop Card */}
         <button
           onClick={() => openModal("https://papaselectronicrepairshop.deze.me", "Papa's Electronic Repair Shop")}
-          className="group p-5 sm:p-6 rounded-2xl bg-black/60 backdrop-blur-xl border border-yellow-500/30 hover:border-yellow-400 hover:bg-black/80 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_40px_rgba(234,179,8,0.3)] text-left cursor-pointer"
+          className="group p-5 sm:p-6 rounded-2xl bg-black/60 backdrop-blur-xl border border-yellow-500/30 hover:border-yellow-400 hover:bg-black/80 transition-all duration-500 ease-out hover:-translate-y-2 hover:scale-[1.01] hover:shadow-[0_0_40px_rgba(234,179,8,0.3)] active:scale-[0.99] motion-reduce:transform-none motion-reduce:transition-none text-left cursor-pointer"
         >
           <h2 className="text-lg sm:text-xl font-semibold mb-3 flex items-center gap-3 font-mono text-white">
             Papa&apos;s Repair
@@ -190,7 +190,7 @@ export default function Home() {
         {/* Arcade Card */}
         <a
           href="/arcade"
-          className="group p-5 sm:p-6 rounded-2xl bg-black/60 backdrop-blur-xl border border-green-500/30 hover:border-green-400 hover:bg-black/80 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_40px_rgba(46,213,115,0.3)] sm:col-span-2 lg:col-span-1 cursor-pointer"
+          className="group p-5 sm:p-6 rounded-2xl bg-black/60 backdrop-blur-xl border border-green-500/30 hover:border-green-400 hover:bg-black/80 transition-all duration-500 ease-out hover:-translate-y-2 hover:scale-[1.01] hover:shadow-[0_0_40px_rgba(46,213,115,0.3)] active:scale-[0.99] motion-reduce:transform-none motion-reduce:transition-none sm:col-span-2 lg:col-span-1 cursor-pointer"
         >
           <h2 className="text-lg sm:text-xl font-semibold mb-3 flex items-center gap-3 font-mono text-white">
             Arcade
@@ -210,11 +210,37 @@ export default function Home() {
       {/* Footer */}
       <footer className="relative z-10 mt-12 sm:mt-16 md:mt-20 text-center space-y-4 animate-fade-in-delay-2 px-4">
         <div className="text-xs sm:text-sm text-gray-300 font-mono max-w-lg mx-auto leading-loose">
-          <p className="text-sm sm:text-base">Hey there! 👋 I&apos;m Jepot</p>
+          <p className="text-sm sm:text-base inline-flex items-center justify-center gap-2">
+            Hey there!
+            <svg className="h-4 w-4 text-cyan-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <path d="M8 11V5a2 2 0 1 1 4 0v6" />
+              <path d="M12 11V4a2 2 0 1 1 4 0v7" />
+              <path d="M16 11V6a2 2 0 1 1 4 0v8a8 8 0 0 1-16 0v-3a2 2 0 1 1 4 0" />
+            </svg>
+            I&apos;m Jepot
+          </p>
           <p className="mt-2 break-words">Just a dev exploring the web,</p>
           <p className="break-words">building fun projects &amp; learning cool tech</p>
-          <p className="break-words">one line of code at a time 🤖✨</p>
-          <p className="mt-3 text-cyan-400 font-semibold">Thanks for stopping by! 🚀</p>
+          <p className="break-words inline-flex items-center justify-center gap-2">
+            one line of code at a time
+            <svg className="h-4 w-4 text-purple-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <rect x="3" y="4" width="18" height="12" rx="2" />
+              <path d="M8 20h8" />
+              <path d="m10 9 2 2-2 2" />
+              <path d="M14 13h2" />
+            </svg>
+            <svg className="h-4 w-4 text-yellow-300" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="m12 2 2.1 5.2 5.6.5-4.3 3.7 1.3 5.5L12 14.2 7.3 17l1.3-5.5L4.3 7.7l5.6-.5L12 2Z" />
+            </svg>
+          </p>
+          <p className="mt-3 text-cyan-400 font-semibold inline-flex items-center justify-center gap-2">
+            Thanks for stopping by!
+            <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <path d="M5 13c5 0 6-6 6-6s1 6 8 6" />
+              <path d="M13 5h6l-2 2" />
+              <path d="m19 5-2-2" />
+            </svg>
+          </p>
         </div>
         <p className="text-xs text-gray-600 font-mono">© {currentYear} DEZE</p>
       </footer>

@@ -476,7 +476,7 @@ export default function FluppyBirdGame() {
                   label: "Flap",
                   ariaLabel: "Flap",
                   onAction: flap,
-                  icon: "✦",
+                  icon: "▲",
                   variant: "primary",
                 }}
               />

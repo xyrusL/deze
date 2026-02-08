@@ -22,6 +22,16 @@ const games = [
     description: "Stack falling tetrominoes, clear lines, and survive as drop speed increases by level.",
     href: "/arcade/tetris",
   },
+  {
+    title: "Neon Dodger",
+    description: "Switch lanes quickly to dodge incoming blocks as speed keeps climbing.",
+    href: "/arcade/neon-dodger",
+  },
+  {
+    title: "Meteor Catch",
+    description: "Catch falling meteors with your paddle and survive with only three misses.",
+    href: "/arcade/meteor-catch",
+  },
 ] as const;
 
 export default function ArcadePage() {
@@ -47,4 +57,3 @@ export default function ArcadePage() {
     </main>
   );
 }
-
