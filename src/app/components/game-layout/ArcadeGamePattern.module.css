@@ -1,0 +1,167 @@
+.root {
+  --arcade-board-max-width: 620px;
+  width: min(100%, 1120px);
+  margin-inline: auto;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(0.8rem, 1.9vw, 1.2rem);
+  align-items: start;
+}
+
+.boardColumn {
+  display: grid;
+  justify-items: center;
+}
+
+.sidebarColumn {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.panelCard {
+  display: grid;
+  gap: 0.58rem;
+  padding: clamp(0.65rem, 1.7vw, 0.85rem);
+  border-radius: 12px;
+  border: 1px solid rgba(127, 255, 210, 0.22);
+  background: linear-gradient(170deg, rgba(5, 18, 26, 0.84), rgba(3, 11, 19, 0.92));
+}
+
+.panelTitle {
+  margin: 0;
+  color: #dffff5;
+  font-size: clamp(0.8rem, 1.4vw, 0.9rem);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.keyHintList,
+.tipList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.keyHintItem {
+  display: grid;
+  grid-template-columns: minmax(86px, auto) 1fr;
+  gap: 0.55rem;
+  align-items: center;
+}
+
+.keyHintAction {
+  color: #d5f4e8;
+  font-size: clamp(0.75rem, 1.6vw, 0.82rem);
+  font-weight: 700;
+}
+
+.keyHintKeys {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.keyBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 28px;
+  min-width: 28px;
+  padding: 0.22rem 0.45rem;
+  border-radius: 8px;
+  border: 1px solid rgba(146, 255, 224, 0.35);
+  background: rgba(11, 28, 37, 0.9);
+  color: #defff4;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.tipItem {
+  color: #cce6dc;
+  font-size: clamp(0.76rem, 1.8vw, 0.84rem);
+  line-height: 1.4;
+}
+
+.controllerDock {
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr) minmax(300px, 360px);
+    gap: clamp(1rem, 2.3vw, 1.5rem);
+  }
+
+  .sidebarColumn {
+    position: sticky;
+    top: 1rem;
+    max-height: calc(100dvh - 2rem);
+    align-content: start;
+  }
+}
+
+@media (max-width: 1023px) {
+  .layout {
+    gap: 0.75rem;
+  }
+
+  .sidebarColumn {
+    width: min(100%, 460px);
+    justify-self: center;
+  }
+
+  .keyHintItem {
+    grid-template-columns: minmax(76px, auto) 1fr;
+  }
+}
+
+@media (max-height: 520px) and (orientation: landscape) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr) minmax(230px, 300px);
+    gap: 0.62rem;
+  }
+
+  .boardColumn {
+    justify-items: center;
+  }
+
+  .sidebarColumn {
+    width: 100%;
+    max-width: 300px;
+    gap: 0.52rem;
+  }
+
+  .panelCard {
+    gap: 0.35rem;
+    padding: 0.5rem 0.55rem;
+  }
+
+  .panelTitle {
+    font-size: 0.77rem;
+  }
+
+  .tipItem,
+  .keyHintAction {
+    font-size: 0.72rem;
+  }
+
+  .keyBadge {
+    min-height: 24px;
+    min-width: 24px;
+    padding: 0.18rem 0.35rem;
+    font-size: 0.66rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .keyHintItem {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+}

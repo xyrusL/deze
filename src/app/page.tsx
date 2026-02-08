@@ -189,7 +189,7 @@ export default function Home() {
 
         {/* Arcade Card */}
         <a
-          href="/games"
+          href="/arcade"
           className="group p-5 sm:p-6 rounded-2xl bg-black/60 backdrop-blur-xl border border-green-500/30 hover:border-green-400 hover:bg-black/80 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_40px_rgba(46,213,115,0.3)] sm:col-span-2 lg:col-span-1 cursor-pointer"
         >
           <h2 className="text-lg sm:text-xl font-semibold mb-3 flex items-center gap-3 font-mono text-white">
@@ -202,7 +202,7 @@ export default function Home() {
             </svg>
           </h2>
           <p className="text-gray-300 text-xs sm:text-sm leading-relaxed font-mono break-words">
-            Play classic games. Test your skills.
+            Play classic games in the DEZE Arcade hub.
           </p>
         </a>
       </div>
