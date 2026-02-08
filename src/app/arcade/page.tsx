@@ -32,6 +32,11 @@ const games = [
     description: "Catch falling meteors with your paddle and survive with only three misses.",
     href: "/arcade/meteor-catch",
   },
+  {
+    title: "Mental Math Practice",
+    description: "Configure digits, operators, timer, and questions for a focused mental-math speed run.",
+    href: "/arcade/mental-math-practice",
+  },
 ] as const;
 
 export default function ArcadePage() {
