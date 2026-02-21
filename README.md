@@ -1,122 +1,38 @@
-# DEZE — Personal Hub
+# DEZE
 
-> *"Gateway to the Future"* — A personal landing page by a dev exploring the web one line of code at a time.
+> *Gateway to the Future*
 
-DEZE is a personal home on the internet. It acts as a central hub that links to various personal projects and creations, all hosted under the `deze.me` domain network.
+Welcome to **DEZE** — my personal corner of the internet.
 
----
-
-## 🌐 What's Inside
-
-- 🍉 **Watermelon** — A cozy Minecraft SMP server with custom plugins and endless adventures
-- 📺 **RioAnime** — An anime streaming platform — stream, discover, and enjoy anime
-- 🔧 **Papa's Electronic Repair Shop** — Trusted electronics repair service since 2021
-- 🕹️ **Arcade** — A built-in browser game hub with multiple classic games
-
-### 🎮 Arcade Games
-The DEZE Arcade hosts the following browser-playable games:
-- **Flappy Bird** — Guide your bird through the pipes
-- **Mental Math Practice** — Sharpen your arithmetic skills
-- **Meteor Catch** — Catch falling meteors
-- **Neon Dodger** — Dodge obstacles in neon style
-- **Snake** — Classic snake game
-- **Tap Tap Shoots** — Quick-reflex tapping game
-- **Tetris** — Classic block stacking puzzle
-- **Word Guess** — Guess the hidden word (Wordle-style)
+This is my landing page, a central hub where all my projects live under one roof. Every project I build gets its own space under the `deze.me` domain, and this page brings them all together automatically — no manual updates needed every time something new is added.
 
 ---
 
-## 🛡️ Asset Protection
+## 🤖 AI as a Tool, Not the Author
 
-DEZE also acts as a **private asset server**, serving static assets (e.g. stylesheets for RioAnime) with CORS protection. Only verified `deze.me` subdomains are allowed to load assets from `/assets/rio/*`.
+I use **AI to speed up my development workflow** — but let me be clear: I'm still the one in charge.
 
-To add a new allowed domain, edit `src/middleware.ts`:
-```ts
-const ALLOWED_ORIGINS = [
-  'https://rioanime.deze.me',
-  'https://landing.deze.me',
-  // Add your subdomain here
-];
-```
+Every project here is driven by my own ideas, decisions, and architecture. AI is simply a tool I use to move faster — like how a developer uses a library or a shortcut. It doesn't design the project, it doesn't make the calls, and it doesn't decide what gets built.
 
----
+- **I define the vision** — what to build and why
+- **I own the architecture** — how everything is structured and connected
+- **I review every line** — nothing ships without me understanding it
+- **AI handles the repetitive parts** — so I can focus on what actually matters
 
-## 🚀 Getting Started (Local Development)
-
-### Prerequisites
-- [Node.js](https://nodejs.org/) v18 or higher
-- npm (comes with Node.js)
-
-### Installation
-```bash
-# 1. Clone the repository
-git clone <your-repo-url>
-cd deze
-
-# 2. Install dependencies
-npm install
-
-# 3. Start the development server
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) in your browser to see the site.
+Think of it less like "AI built this" and more like "I built this, faster."
 
 ---
 
-## 🏗️ Tech Stack
+## 🌐 About This Site
 
-| Tool | Version | Purpose |
-|---|---|---|
-| [Next.js](https://nextjs.org) | 16 | React framework & routing |
-| [React](https://react.dev) | 19 | UI library |
-| [TypeScript](https://www.typescriptlang.org) | 5 | Type-safe JavaScript |
-| [Tailwind CSS](https://tailwindcss.com) | 4 | Utility-first styling |
+DEZE is where it all starts. Whether it's a game, a web app, a tool, or something entirely different — if I built it, you'll find it here. Each subdomain is its own project, and this page is your gateway to all of them.
 
 ---
 
-## 📦 Available Scripts
+## ⚙️ Tech Stack
 
-```bash
-npm run dev        # Start local development server (hot-reload)
-npm run build      # Build for production (also minifies CSS)
-npm run start      # Run the production build
-npm run lint       # Run ESLint to check for code issues
-```
+Built with **Next.js**, **React**, **TypeScript**, and **Tailwind CSS**.
 
 ---
 
-## 📁 Project Structure
-
-```
-deze/
-├── public/
-│   └── assets/          # Static assets (images, stylesheets for subdomains)
-└── src/
-    ├── app/
-    │   ├── arcade/      # Arcade hub page + individual game routes
-    │   │   ├── fluppy-bird/
-    │   │   ├── snake/
-    │   │   ├── tetris/
-    │   │   └── ...      # (+ 5 more games)
-    │   ├── components/  # Reusable UI components
-    │   ├── layout.tsx   # Root HTML layout & metadata
-    │   └── page.tsx     # Main landing page (hub with project cards)
-    └── middleware.ts    # Asset CORS protection logic
-```
-
----
-
-## 🌍 Deployment
-
-This site is deployed on **Vercel** using the [Vercel Platform](https://vercel.com/new). Vercel handles automatic deployments on every push to the main branch.
-
-```bash
-# Production build preview (optional, before pushing)
-npm run build
-npm run start
-```
-
----
-
-*© 2025 DEZE — Built with ❤️*
+*© DEZE — Built with ❤️ and a little help from AI*
