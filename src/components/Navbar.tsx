@@ -1,7 +1,9 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 import SmoothScrollLink from "@/components/SmoothScrollLink";
+import dezeIcon from "@/app/icon.png";
 
 const links = [
   { label: "Home", href: "#home" },
@@ -16,7 +18,15 @@ export default function Navbar() {
     <nav className="fixed inset-x-0 top-0 z-50 px-4 pt-4 sm:px-6">
       <div className="surface-nav mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
         <SmoothScrollLink href="#home" className="flex items-center gap-3 select-none">
-          <span className="brand-mark">D</span>
+          <span className="brand-mark" aria-hidden="true">
+            <Image
+              src={dezeIcon}
+              alt=""
+              className="brand-mark-image"
+              sizes="40px"
+              priority
+            />
+          </span>
           <span>
             <span className="block text-[0.7rem] font-semibold uppercase tracking-[0.28em] text-[var(--muted)]">
               Deze network
