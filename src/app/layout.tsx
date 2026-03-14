@@ -1,31 +1,20 @@
 import type { Metadata } from "next";
-import HashScrollManager from "@/components/HashScrollManager";
-import { Plus_Jakarta_Sans, Syne } from "next/font/google";
-import Navbar from "@/components/Navbar";
-import RevealObserver from "@/components/RevealObserver";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const plusJakartaSans = Plus_Jakarta_Sans({
-  variable: "--font-plus-jakarta-sans",
+const geistSans = Geist({
+  variable: "--font-geist-sans",
   subsets: ["latin"],
 });
 
-const syne = Syne({
-  variable: "--font-syne",
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "Deze.me | Modern web projects by Paul",
-  description:
-    "Deze.me is a polished index of live apps, tools, and experiments built by Paul across the web.",
-  metadataBase: new URL("https://landing.deze.me"),
-  openGraph: {
-    title: "Deze.me | Modern web projects by Paul",
-    description: "Explore live apps, tools, and experiments from the Deze.me network.",
-    url: "https://landing.deze.me",
-    siteName: "Deze.me",
-  },
+  title: "Deze Portfolio",
+  description: "Modern portfolio homepage showcasing selected projects by Deze.",
 };
 
 export default function RootLayout({
@@ -36,13 +25,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${plusJakartaSans.variable} ${syne.variable} antialiased`}
-        suppressHydrationWarning
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Navbar />
-        <HashScrollManager />
-        <RevealObserver />
-        <main>{children}</main>
+        {children}
       </body>
     </html>
   );
