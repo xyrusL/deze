@@ -241,3 +241,24 @@ export const BrokenComputerIcon = createIcon(
     />
   </>,
 );
+
+export const CopyrightIcon = createIcon(
+  <>
+    <circle
+      cx="12"
+      cy="12"
+      r="8.25"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.75"
+    />
+    <path
+      d="M14.8 9.6a3.2 3.2 0 1 0 0 4.8"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.75"
+    />
+  </>,
+);
