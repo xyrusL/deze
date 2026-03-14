@@ -1,6 +1,16 @@
 {
   "name": "deze-dev",
   "version": "0.1.0",
+  "description": "Personal portfolio hub for Deze Dev, created by Paul (Xyrus).",
+  "author": "Paul (Xyrus) <https://github.com/xyrusL>",
+  "homepage": "https://github.com/xyrusL/deze",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xyrusL/deze.git"
+  },
+  "bugs": {
+    "url": "https://github.com/xyrusL/deze/issues"
+  },
   "private": true,
   "scripts": {
     "dev": "next dev",

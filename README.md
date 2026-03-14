@@ -9,6 +9,10 @@
 This is the source for **Deze Dev**, a personal portfolio hub built with Next.js.  
 It is designed to feel simple, modern, and personal while making it easy to browse projects, open external links, and grow the site over time.
 
+Created by **Paul (Xyrus)**. GitHub: [xyrusL](https://github.com/xyrusL)
+
+If you fork, reuse, or download this repo, please keep visible credit to Paul (Xyrus) and link back to the original repository when possible.
+
 ## Why this project exists
 
 Deze Dev is meant to be more than a plain project list.  

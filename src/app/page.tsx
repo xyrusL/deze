@@ -36,6 +36,50 @@ export default function Home() {
   );
 
   useEffect(() => {
+    const threshold = 160;
+    let devtoolsOpen = false;
+
+    const showPeekabooMessage = () => {
+      console.log(
+        "%cPeekaboo... curious minds always end up here.",
+        [
+          "color: #e2e8f0",
+          "background: linear-gradient(135deg, #0f172a, #1e293b)",
+          "border: 1px solid rgba(56, 189, 248, 0.45)",
+          "border-radius: 12px",
+          "padding: 12px 16px",
+          "font-size: 14px",
+          "font-family: monospace",
+          "font-weight: 700",
+        ].join(";"),
+      );
+    };
+
+    const detectDevtools = () => {
+      const widthGap = window.outerWidth - window.innerWidth;
+      const heightGap = window.outerHeight - window.innerHeight;
+      const isOpen = widthGap > threshold || heightGap > threshold;
+
+      if (isOpen && !devtoolsOpen) {
+        devtoolsOpen = true;
+        showPeekabooMessage();
+        return;
+      }
+
+      if (!isOpen && devtoolsOpen) {
+        devtoolsOpen = false;
+      }
+    };
+
+    detectDevtools();
+    window.addEventListener("resize", detectDevtools);
+
+    return () => {
+      window.removeEventListener("resize", detectDevtools);
+    };
+  }, []);
+
+  useEffect(() => {
     if (!externalTarget) {
       return;
     }

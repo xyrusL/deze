@@ -40,7 +40,7 @@ export function SiteHeader({ items }: SiteHeaderProps) {
                 Deze Dev
               </p>
               <p className="text-sm text-zinc-600 dark:text-zinc-300">
-                Modern web work, presented simply.
+                Learning, building, improving.
               </p>
             </div>
           </div>
