@@ -10,6 +10,13 @@ export type NavigationItem = {
   icon: "home" | "projects" | "about" | "contact";
 };
 
+export type SocialLink = {
+  label: string;
+  platform: "github";
+  url: string;
+  username: string;
+};
+
 export const navigationItems: NavigationItem[] = [
   { label: "Home", href: "#home", icon: "home" },
   { label: "Projects", href: "#projects", icon: "projects" },
@@ -67,6 +74,13 @@ export const projectSectionContent = {
 export const footerContent = {
   copyright: "Deze Dev. A small portfolio where I share what I am building.",
   note: "Still learning, still building, and improving one project at a time.",
-  githubLabel: "GitHub",
-  githubUrl: "https://github.com/xyrusL",
 };
+
+export const socialLinks: SocialLink[] = [
+  {
+    label: "GitHub",
+    platform: "github",
+    url: "https://github.com/xyrusL",
+    username: "xyrusL",
+  },
+];

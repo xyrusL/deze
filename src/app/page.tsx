@@ -13,6 +13,7 @@ import {
   overviewParagraphs,
   projectSectionContent,
   projects,
+  socialLinks,
   type Project,
 } from "@/data/portfolio";
 
@@ -77,9 +78,8 @@ export default function Home() {
 
         <SiteFooter
           copyright={footerContent.copyright}
-          githubLabel={footerContent.githubLabel}
-          githubUrl={footerContent.githubUrl}
           note={footerContent.note}
+          socialLinks={socialLinks}
         />
       </div>
 
