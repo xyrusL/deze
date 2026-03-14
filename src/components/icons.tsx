@@ -150,3 +150,35 @@ export const GitHubIcon = createIcon(
     fill="currentColor"
   />,
 );
+
+export const CopyIcon = createIcon(
+  <>
+    <rect
+      height="11"
+      rx="2"
+      stroke="currentColor"
+      strokeLinejoin="round"
+      strokeWidth="1.75"
+      width="9"
+      x="9"
+      y="9"
+    />
+    <path
+      d="M15 9V6a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.75"
+    />
+  </>,
+);
+
+export const CheckIcon = createIcon(
+  <path
+    d="m5.5 12.5 4 4L18.5 7.5"
+    stroke="currentColor"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    strokeWidth="1.75"
+  />,
+);

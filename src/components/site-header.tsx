@@ -39,13 +39,13 @@ export function SiteHeader({ items }: SiteHeaderProps) {
               <li key={item.href} className="min-w-0">
                 <a
                   aria-label={item.label}
-                  className="inline-flex min-h-14 w-full flex-col items-center justify-center gap-1 rounded-[1rem] px-2 py-2.5 text-[0.68rem] tracking-[0.16em] uppercase transition duration-200 hover:bg-sky-500/10 hover:text-zinc-950 active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500 dark:hover:bg-sky-400/10 dark:hover:text-white dark:focus-visible:outline-sky-300 sm:min-h-0 sm:w-auto sm:flex-row sm:gap-2 sm:rounded-full sm:px-4 sm:py-2 sm:text-sm sm:normal-case sm:tracking-normal"
+                  className="hover-chip-premium hover-press-soft group inline-flex min-h-14 w-full flex-col items-center justify-center gap-1 rounded-[1rem] px-2 py-2.5 text-[0.68rem] tracking-[0.16em] uppercase hover:bg-sky-500/10 hover:text-zinc-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500 dark:hover:bg-sky-400/10 dark:hover:text-white dark:focus-visible:outline-sky-300 sm:min-h-0 sm:w-auto sm:flex-row sm:gap-2 sm:rounded-full sm:px-4 sm:py-2 sm:text-sm sm:normal-case sm:tracking-normal"
                   href={item.href}
                 >
-                  <span>
+                  <span className="hover-icon-drift">
                     <Icon className="h-4 w-4" />
                   </span>
-                  <span>{item.label}</span>
+                  <span className="hover-text-glide">{item.label}</span>
                 </a>
               </li>
             );

@@ -29,25 +29,25 @@ export const projects: Project[] = [
     shortName: "RioAnime",
     url: "https://rioanime.deze.me",
     description:
-      "Anime-focused web experience with a clean presentation and room for expanding content.",
+      "Anime streaming hub focused on free Tagalog anime, with featured shows, search, category filters, and a large browseable catalog.",
   },
   {
     shortName: "Papa's Electronic Repair Shop",
     url: "https://papaselectronicrepairshop.deze.me",
     description:
-      "Service-oriented business site designed to present repair offerings clearly and credibly.",
+      "Service business website for a Quezon City and Rizal repair shop, highlighting TV and appliance repair, home service, and fast contact options.",
   },
   {
     shortName: "Chunkloader",
     url: "https://chunkloader.deze.me",
     description:
-      "Utility-style project with a practical layout that prioritizes straightforward interaction.",
+      "Minecraft seed exploration tool that turns raw seeds into interactive biome maps with overlays, structure previews, coordinates, and dimension switching.",
   },
   {
     shortName: "Watermelon",
     url: "https://watermelon.deze.me",
     description:
-      "Modern web project with a simple identity and space for future product or portfolio growth.",
+      "Minecraft community website for Watermelon SMP, featuring server info, custom gameplay highlights, tools, commands, and mobile download links.",
   },
 ];
 
