@@ -1,4 +1,4 @@
-# Deze Dev
+# Deze Labs
 
 <p align="center">
   <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f3a8.svg" alt="Palette" width="28" height="28" />
@@ -6,7 +6,7 @@
   <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f4bb.svg" alt="Laptop" width="28" height="28" />
 </p>
 
-This is the source for **Deze Dev**, a personal portfolio hub built with Next.js.  
+This is the source for **Deze Labs**, a personal portfolio hub built with Next.js.  
 It is designed to feel simple, modern, and personal while making it easy to browse projects, open external links, and grow the site over time.
 
 Created by **Paul (Xyrus)**. GitHub: [xyrusL](https://github.com/xyrusL)
@@ -15,7 +15,7 @@ If you fork, reuse, or download this repo, please keep visible credit to Paul (X
 
 ## Why this project exists
 
-Deze Dev is meant to be more than a plain project list.  
+Deze Labs is meant to be more than a plain project list.  
 It is a small home on the web for experiments, hobby builds, and work-in-progress ideas, presented in a way that feels clean, approachable, and a little more alive than a default starter template.
 
 ## What is inside
@@ -90,4 +90,4 @@ The site intentionally leans into:
 This project has been shaped through lots of little refinements:  
 better spacing, clearer project descriptions, smoother motion, stronger branding, and a more thoughtful mobile experience.
 
-That is part of the point of Deze Dev too: keep building, keep refining, keep shipping.
+That is part of the point of Deze Labs too: keep building, keep refining, keep shipping.

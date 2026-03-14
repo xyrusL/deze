@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, JetBrains_Mono } from "next/font/google";
+import { brand } from "@/data/brand";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -13,8 +14,8 @@ const jetBrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Deze Dev | Portfolio Hub",
-  description: "Modern portfolio homepage showcasing selected projects by Deze Dev.",
+  title: `${brand.name} | ${brand.portfolioLabel}`,
+  description: `Modern portfolio homepage showcasing selected projects by ${brand.name}.`,
   icons: {
     icon: "/icon.png",
     shortcut: "/icon.png",

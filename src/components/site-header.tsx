@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { GridIcon, HomeIcon, MailIcon, ProfileIcon } from "@/components/icons";
+import { brand } from "@/data/brand";
 import type { NavigationItem } from "@/data/portfolio";
 
 const navigationIcons = {
@@ -27,7 +28,7 @@ export function SiteHeader({ items }: SiteHeaderProps) {
           <div className="flex items-center gap-3">
             <div className="overflow-hidden rounded-full border border-white/12 bg-white/50 shadow-[0_8px_18px_rgba(15,23,42,0.08)] dark:bg-white/8">
               <Image
-                alt="Deze Dev logo"
+                alt={brand.logoAlt}
                 className="h-11 w-11 object-cover sm:h-12 sm:w-12"
                 priority
                 height={48}
@@ -37,10 +38,10 @@ export function SiteHeader({ items }: SiteHeaderProps) {
             </div>
             <div className="min-w-0">
               <p className="text-sm font-medium tracking-[0.2em] text-zinc-500 uppercase dark:text-zinc-400">
-                Deze Dev
+                {brand.shortName}
               </p>
               <p className="text-sm text-zinc-600 dark:text-zinc-300">
-                Learning, building, improving.
+                {brand.tagline}
               </p>
             </div>
           </div>

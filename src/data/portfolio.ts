@@ -1,3 +1,5 @@
+import { brand } from "@/data/brand";
+
 export type Project = {
   shortName: string;
   url: string;
@@ -54,13 +56,13 @@ export const projects: Project[] = [
 
 export const heroContent = {
   eyebrow: "Learning in public",
-  title: "Welcome to Deze Dev. I build simple, useful web projects.",
+  title: `Welcome to ${brand.name}. I build simple, useful web projects.`,
   description:
     "This is where I share the work I have been building, the ideas I am exploring, and the projects I am continuing to improve.",
 };
 
 export const overviewParagraphs = [
-  "Hi, welcome to my portfolio hub, Deze Dev. I am Paul, also known as Xyrus, and I am 22 years old.",
+  `Hi, welcome to my portfolio hub, ${brand.name}. I am Paul (Xyrus), and I am 22 years old.`,
   "Right now I am working on hobby projects like the ones you see here, while learning and improving step by step.",
   "I enjoy trying new technology, especially AI, because it helps me work faster, stay productive, and build better than I could in the past.",
 ];
@@ -73,7 +75,7 @@ export const projectSectionContent = {
 };
 
 export const footerContent = {
-  copyright: "Deze Dev. A small portfolio where I share what I am building.",
+  copyright: `${brand.name}. A small portfolio where I share what I am building.`,
 };
 
 export const socialLinks: SocialLink[] = [
