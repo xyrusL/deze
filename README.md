@@ -1,4 +1,4 @@
-# Deze Portfolio
+# Deze Dev
 
 This repository contains a customized Next.js portfolio homepage for showcasing selected projects with a clean, responsive layout and a lightweight modal-based project launch flow.
 

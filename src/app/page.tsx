@@ -55,10 +55,10 @@ export default function Home() {
 
   return (
     <div className="min-h-screen overflow-x-clip bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.98),_rgba(244,244,245,0.94)_42%,_rgba(228,228,231,0.9))] text-zinc-950 dark:bg-[radial-gradient(circle_at_top,_rgba(39,39,42,0.96),_rgba(9,9,11,0.98)_55%,_rgba(0,0,0,1))] dark:text-zinc-50">
-      <div className="mx-auto flex min-h-screen w-full max-w-6xl flex-col px-4 py-4 sm:px-6 sm:py-6 lg:px-10">
+      <div className="mx-auto flex min-h-screen w-full max-w-6xl flex-col px-3 py-3 sm:px-6 sm:py-6 lg:px-10">
         <SiteHeader items={navigationItems} />
 
-        <main className="flex flex-1 flex-col gap-8 sm:gap-10">
+        <main className="flex flex-1 flex-col gap-6 sm:gap-10">
           <HeroSection
             description={heroContent.description}
             eyebrow={heroContent.eyebrow}
@@ -77,6 +77,8 @@ export default function Home() {
 
         <SiteFooter
           copyright={footerContent.copyright}
+          githubLabel={footerContent.githubLabel}
+          githubUrl={footerContent.githubUrl}
           note={footerContent.note}
         />
       </div>

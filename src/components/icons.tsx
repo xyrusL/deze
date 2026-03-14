@@ -96,3 +96,50 @@ export const MailIcon = createIcon(
     />
   </>,
 );
+
+export const SparkIcon = createIcon(
+  <>
+    <path
+      d="M12 3.75 13.8 8.2 18.25 10 13.8 11.8 12 16.25 10.2 11.8 5.75 10 10.2 8.2 12 3.75Z"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.75"
+    />
+    <path
+      d="M18.5 4.5v3M20 6h-3"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.75"
+    />
+  </>,
+);
+
+export const OrbitIcon = createIcon(
+  <>
+    <ellipse
+      cx="12"
+      cy="12"
+      rx="7.5"
+      ry="3.5"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.75"
+      transform="rotate(-18 12 12)"
+    />
+    <ellipse
+      cx="12"
+      cy="12"
+      rx="7.5"
+      ry="3.5"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.75"
+      transform="rotate(26 12 12)"
+    />
+    <circle cx="12" cy="12" r="1.5" fill="currentColor" />
+  </>,
+);

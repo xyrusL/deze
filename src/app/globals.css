@@ -44,3 +44,21 @@ summary {
 a {
   text-decoration: none;
 }
+
+.mobile-projects-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(56, 189, 248, 0.45) transparent;
+}
+
+.mobile-projects-scroll::-webkit-scrollbar {
+  width: 0.4rem;
+}
+
+.mobile-projects-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.mobile-projects-scroll::-webkit-scrollbar-thumb {
+  border-radius: 9999px;
+  background: linear-gradient(180deg, rgba(56, 189, 248, 0.75), rgba(125, 211, 252, 0.35));
+}

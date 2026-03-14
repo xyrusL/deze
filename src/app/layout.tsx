@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Deze Portfolio",
-  description: "Modern portfolio homepage showcasing selected projects by Deze.",
+  title: "Deze Dev",
+  description: "Modern portfolio homepage showcasing selected projects by Deze Dev.",
 };
 
 export default function RootLayout({

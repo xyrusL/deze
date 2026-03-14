@@ -45,16 +45,16 @@ export const projects: Project[] = [
 ];
 
 export const heroContent = {
-  eyebrow: "Hello",
-  title: "Welcome to my portfolio. I build simple, useful web projects.",
+  eyebrow: "Learning in public",
+  title: "Welcome to Deze Dev. I build simple, useful web projects.",
   description:
     "This is where I share the work I have been building, the ideas I am exploring, and the projects I am continuing to improve.",
 };
 
 export const overviewParagraphs = [
-  "I am a developer who enjoys making websites that feel clear, practical, and easy to use.",
-  "Here you will find a few of my recent projects, from small ideas to sites I am still growing over time.",
-  "If you want to see what I make and how I approach my work, this is a good place to start.",
+  "Hi, welcome to my portfolio hub, Deze Dev. I am Paul, also known as Xyrus, and I am 22 years old.",
+  "Right now I am working on hobby projects like the ones you see here, while learning and improving step by step.",
+  "I enjoy trying new technology, especially AI, because it helps me work faster, stay productive, and build better than I could in the past.",
 ];
 
 export const projectSectionContent = {
@@ -65,6 +65,8 @@ export const projectSectionContent = {
 };
 
 export const footerContent = {
-  copyright: "© 2026 Deze. Designed as a modern portfolio homepage.",
-  note: "Focused on clarity, responsiveness, and room for additional projects.",
+  copyright: "Deze Dev. A small portfolio where I share what I am building.",
+  note: "Still learning, still building, and improving one project at a time.",
+  githubLabel: "GitHub",
+  githubUrl: "https://github.com/xyrusL",
 };
