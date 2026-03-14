@@ -1,6 +1,9 @@
+import { NextResponse, type NextRequest } from "next/server";
 import { createSecureMiddleware } from "websecure-ez";
 
 const isDev = process.env.NODE_ENV !== "production";
+const canonicalHost = "deze.me";
+const redirectedHosts = new Set(["landing.deze.me", "www.landing.deze.me"]);
 
 const secureMiddleware = createSecureMiddleware({
   contentSecurityPolicy: {
@@ -68,7 +71,18 @@ const secureMiddleware = createSecureMiddleware({
   },
 });
 
-export default secureMiddleware;
+export default function middleware(request: NextRequest) {
+  const host = request.headers.get("host")?.toLowerCase().split(":")[0];
+
+  if (host && redirectedHosts.has(host)) {
+    const redirectUrl = request.nextUrl.clone();
+    redirectUrl.protocol = "https";
+    redirectUrl.host = canonicalHost;
+    return NextResponse.redirect(redirectUrl, 308);
+  }
+
+  return secureMiddleware(request);
+}
 
 export const config = {
   matcher: ["/((?!_next/static|_next/image|favicon.ico).*)"],
