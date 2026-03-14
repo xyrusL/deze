@@ -14,25 +14,32 @@ import {
   projectSectionContent,
   projects,
   socialLinks,
+  type SocialLink,
   type Project,
 } from "@/data/portfolio";
 
+type ExternalTarget = {
+  label: string;
+  typeLabel: string;
+  url: string;
+};
+
 export default function Home() {
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [externalTarget, setExternalTarget] = useState<ExternalTarget | null>(null);
 
   const selectedProjectUrl = useMemo(
-    () => selectedProject?.url ?? "",
-    [selectedProject],
+    () => externalTarget?.url ?? "",
+    [externalTarget],
   );
 
   useEffect(() => {
-    if (!selectedProject) {
+    if (!externalTarget) {
       return;
     }
 
     const handleEscape = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
-        setSelectedProject(null);
+        setExternalTarget(null);
       }
     };
 
@@ -43,7 +50,23 @@ export default function Home() {
       document.body.style.overflow = "";
       window.removeEventListener("keydown", handleEscape);
     };
-  }, [selectedProject]);
+  }, [externalTarget]);
+
+  const handleOpenProject = (project: Project) => {
+    setExternalTarget({
+      label: project.shortName,
+      typeLabel: "Project link",
+      url: project.url,
+    });
+  };
+
+  const handleOpenSocial = (link: SocialLink) => {
+    setExternalTarget({
+      label: `${link.label} / ${link.username}`,
+      typeLabel: "External profile",
+      url: link.url,
+    });
+  };
 
   const handleProjectLaunch = () => {
     if (!selectedProjectUrl) {
@@ -51,7 +74,7 @@ export default function Home() {
     }
 
     window.open(selectedProjectUrl, "_blank", "noopener,noreferrer");
-    setSelectedProject(null);
+    setExternalTarget(null);
   };
 
   return (
@@ -70,7 +93,7 @@ export default function Home() {
           <ProjectsSection
             description={projectSectionContent.description}
             eyebrow={projectSectionContent.eyebrow}
-            onOpenProject={setSelectedProject}
+            onOpenProject={handleOpenProject}
             projects={projects}
             title={projectSectionContent.title}
           />
@@ -78,15 +101,18 @@ export default function Home() {
 
         <SiteFooter
           copyright={footerContent.copyright}
+          onOpenLink={handleOpenSocial}
           socialLinks={socialLinks}
         />
       </div>
 
-      {selectedProject ? (
+      {externalTarget ? (
         <ProjectModal
-          onClose={() => setSelectedProject(null)}
+          label={externalTarget.label}
           onContinue={handleProjectLaunch}
-          project={selectedProject}
+          onClose={() => setExternalTarget(null)}
+          typeLabel={externalTarget.typeLabel}
+          url={externalTarget.url}
         />
       ) : null}
     </div>
