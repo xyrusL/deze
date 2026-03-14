@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { GridIcon, HomeIcon, MailIcon, ProfileIcon } from "@/components/icons";
 import type { NavigationItem } from "@/data/portfolio";
 
@@ -22,13 +23,27 @@ export function SiteHeader({ items }: SiteHeaderProps) {
         aria-label="Primary"
         className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between sm:gap-4"
       >
-        <div className="min-w-0 w-fit max-w-full rounded-full border border-white/10 bg-[linear-gradient(135deg,rgba(255,255,255,0.08),rgba(255,255,255,0.03))] px-5 py-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] dark:border-white/10 dark:bg-[linear-gradient(135deg,rgba(255,255,255,0.08),rgba(255,255,255,0.03))] sm:px-6 sm:py-3.5">
-          <p className="text-sm font-medium tracking-[0.2em] text-zinc-500 uppercase dark:text-zinc-400">
-            Deze Dev
-          </p>
-          <p className="text-sm text-zinc-600 dark:text-zinc-300">
-            Modern web work, presented simply.
-          </p>
+        <div className="min-w-0 w-fit max-w-full rounded-full border border-white/10 bg-[linear-gradient(135deg,rgba(255,255,255,0.08),rgba(255,255,255,0.03))] px-4 py-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] dark:border-white/10 dark:bg-[linear-gradient(135deg,rgba(255,255,255,0.08),rgba(255,255,255,0.03))] sm:px-5 sm:py-3.5">
+          <div className="flex items-center gap-3">
+            <div className="overflow-hidden rounded-full border border-white/12 bg-white/50 shadow-[0_8px_18px_rgba(15,23,42,0.08)] dark:bg-white/8">
+              <Image
+                alt="Deze Dev logo"
+                className="h-11 w-11 object-cover sm:h-12 sm:w-12"
+                priority
+                height={48}
+                src="/deze_logo.png"
+                width={48}
+              />
+            </div>
+            <div className="min-w-0">
+              <p className="text-sm font-medium tracking-[0.2em] text-zinc-500 uppercase dark:text-zinc-400">
+                Deze Dev
+              </p>
+              <p className="text-sm text-zinc-600 dark:text-zinc-300">
+                Modern web work, presented simply.
+              </p>
+            </div>
+          </div>
         </div>
 
         <ul className="grid w-full grid-cols-4 gap-1.5 rounded-[1.5rem] border border-black/5 bg-black/[0.03] p-1.5 text-sm font-medium text-zinc-600 dark:border-white/10 dark:bg-black/20 dark:text-zinc-300 sm:flex sm:w-auto sm:flex-wrap sm:justify-end sm:gap-2 sm:rounded-full sm:border-0 sm:bg-transparent sm:p-0">

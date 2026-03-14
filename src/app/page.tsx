@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { HeroSection } from "@/components/hero-section";
+import { BrokenComputerIcon } from "@/components/icons";
 import { ProjectModal } from "@/components/project-modal";
 import { ProjectsSection } from "@/components/projects-section";
 import { SiteFooter } from "@/components/site-footer";
@@ -19,16 +20,18 @@ import {
 } from "@/data/portfolio";
 
 type ExternalTarget = {
+  type: "external" | "unavailable";
   label: string;
   typeLabel: string;
-  url: string;
+  url?: string;
+  description: string;
 };
 
 export default function Home() {
   const [externalTarget, setExternalTarget] = useState<ExternalTarget | null>(null);
 
   const selectedProjectUrl = useMemo(
-    () => externalTarget?.url ?? "",
+    () => externalTarget?.type === "external" ? externalTarget.url ?? "" : "",
     [externalTarget],
   );
 
@@ -56,15 +59,32 @@ export default function Home() {
     setExternalTarget({
       label: project.shortName,
       typeLabel: "Project link",
+      type: "external",
       url: project.url,
+      description:
+        "This link opens in a new browser tab, so you can come back here anytime.",
     });
   };
 
   const handleOpenSocial = (link: SocialLink) => {
+    if (link.status === "unavailable") {
+      setExternalTarget({
+        label: link.label,
+        typeLabel: "Social profile",
+        type: "unavailable",
+        description: "Check back later while this profile is being prepared.",
+      });
+
+      return;
+    }
+
     setExternalTarget({
       label: `${link.label} / ${link.username}`,
       typeLabel: "External profile",
+      type: "external",
       url: link.url,
+      description:
+        "This link opens in a new browser tab, so you can come back here anytime.",
     });
   };
 
@@ -108,11 +128,20 @@ export default function Home() {
 
       {externalTarget ? (
         <ProjectModal
-          label={externalTarget.label}
-          onContinue={handleProjectLaunch}
+          description={externalTarget.description}
+          destinationLabel={externalTarget.type === "external" ? "Destination" : undefined}
+          destinationValue={externalTarget.type === "external" ? selectedProjectUrl.replace(/^https?:\/\//, "") : undefined}
+          icon={externalTarget.type === "unavailable" ? BrokenComputerIcon : undefined}
+          onContinue={externalTarget.type === "external" ? handleProjectLaunch : undefined}
           onClose={() => setExternalTarget(null)}
+          primaryActionLabel={externalTarget.type === "external" ? "Open link" : undefined}
+          secondaryActionLabel={externalTarget.type === "external" ? "Cancel" : "Close"}
+          title={
+            externalTarget.type === "external"
+              ? `Open ${externalTarget.label} in a new tab?`
+              : `${externalTarget.label} is unavailable right now`
+          }
           typeLabel={externalTarget.typeLabel}
-          url={externalTarget.url}
         />
       ) : null}
     </div>

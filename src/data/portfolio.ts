@@ -12,9 +12,10 @@ export type NavigationItem = {
 
 export type SocialLink = {
   label: string;
-  platform: "github";
+  platform: "github" | "facebook" | "tiktok";
   url: string;
   username: string;
+  status: "active" | "unavailable";
 };
 
 export const navigationItems: NavigationItem[] = [
@@ -81,5 +82,20 @@ export const socialLinks: SocialLink[] = [
     platform: "github",
     url: "https://github.com/xyrusL",
     username: "xyrusL",
+    status: "active",
+  },
+  {
+    label: "Facebook",
+    platform: "facebook",
+    url: "",
+    username: "Unavailable right now",
+    status: "unavailable",
+  },
+  {
+    label: "TikTok",
+    platform: "tiktok",
+    url: "",
+    username: "Unavailable right now",
+    status: "unavailable",
   },
 ];

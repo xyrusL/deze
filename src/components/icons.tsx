@@ -151,6 +151,29 @@ export const GitHubIcon = createIcon(
   />,
 );
 
+export const FacebookIcon = createIcon(
+  <path
+    d="M13.5 20v-6.2h2.2l.4-2.8h-2.6V9.2c0-.8.2-1.4 1.3-1.4H16V5.3c-.2 0-.9-.1-1.8-.1-1.8 0-3.1 1.1-3.1 3.3V11H9v2.8h2.3V20h2.2Z"
+    fill="currentColor"
+  />,
+);
+
+export const TikTokIcon = createIcon(
+  <>
+    <path
+      d="M14.5 4.5c.5 1.5 1.5 2.7 3 3.4v2.4a6.3 6.3 0 0 1-3-.8v4.6a4.6 4.6 0 1 1-4.6-4.6c.3 0 .7 0 1 .1V12a2.3 2.3 0 1 0 1.3 2.1V4.5h2.3Z"
+      fill="currentColor"
+    />
+    <path
+      d="M14.5 4.5c.5 1.5 1.5 2.7 3 3.4"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1"
+    />
+  </>,
+);
+
 export const CopyIcon = createIcon(
   <>
     <rect
@@ -181,4 +204,40 @@ export const CheckIcon = createIcon(
     strokeLinejoin="round"
     strokeWidth="1.75"
   />,
+);
+
+export const BrokenComputerIcon = createIcon(
+  <>
+    <rect
+      height="10"
+      rx="2"
+      stroke="currentColor"
+      strokeLinejoin="round"
+      strokeWidth="1.75"
+      width="14"
+      x="5"
+      y="4"
+    />
+    <path
+      d="M8 20h8M10 14l-1.2 3M14 14l1.2 3"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.75"
+    />
+    <path
+      d="M9.25 8.75h.5M14.25 8.75h.5"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.75"
+    />
+    <path
+      d="M9 11.8c.8-.7 1.9-1.1 3-1.1s2.2.4 3 1.1"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.75"
+    />
+  </>,
 );
