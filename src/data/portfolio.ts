@@ -73,7 +73,6 @@ export const projectSectionContent = {
 
 export const footerContent = {
   copyright: "Deze Dev. A small portfolio where I share what I am building.",
-  note: "Still learning, still building, and improving one project at a time.",
 };
 
 export const socialLinks: SocialLink[] = [

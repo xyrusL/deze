@@ -78,7 +78,6 @@ export default function Home() {
 
         <SiteFooter
           copyright={footerContent.copyright}
-          note={footerContent.note}
           socialLinks={socialLinks}
         />
       </div>
