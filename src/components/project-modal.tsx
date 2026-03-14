@@ -1,6 +1,6 @@
 import { ArrowUpRightIcon, CheckIcon, CopyIcon } from "@/components/icons";
 import type { ComponentType } from "react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 type ModalIconProps = {
   className?: string;
@@ -32,19 +32,48 @@ export function ProjectModal({
   title,
 }: ProjectModalProps) {
   const canCopy = Boolean(destinationValue);
-  const [copyStatus, setCopyStatus] = useState<"idle" | "copied">("idle");
+  const [copyStatus, setCopyStatus] = useState<"idle" | "copied" | "failed">("idle");
+  const copyResetTimeoutRef = useRef<number | null>(null);
 
   useEffect(() => {
-    if (copyStatus !== "copied") {
-      return;
+    return () => {
+      if (copyResetTimeoutRef.current) {
+        window.clearTimeout(copyResetTimeoutRef.current);
+      }
+    };
+  }, []);
+
+  const showCopyFeedback = (status: "copied" | "failed") => {
+    if (copyResetTimeoutRef.current) {
+      window.clearTimeout(copyResetTimeoutRef.current);
     }
 
-    const timeoutId = window.setTimeout(() => {
-      setCopyStatus("idle");
-    }, 1800);
+    // Reset first so repeated taps still replay feedback.
+    setCopyStatus("idle");
 
-    return () => window.clearTimeout(timeoutId);
-  }, [copyStatus]);
+    window.requestAnimationFrame(() => {
+      setCopyStatus(status);
+      copyResetTimeoutRef.current = window.setTimeout(() => {
+        setCopyStatus("idle");
+        copyResetTimeoutRef.current = null;
+      }, 1800);
+    });
+  };
+
+  const fallbackCopyToClipboard = (value: string) => {
+    const textarea = document.createElement("textarea");
+    textarea.value = value;
+    textarea.setAttribute("readonly", "");
+    textarea.style.position = "fixed";
+    textarea.style.opacity = "0";
+    textarea.style.pointerEvents = "none";
+    document.body.appendChild(textarea);
+    textarea.select();
+    textarea.setSelectionRange(0, textarea.value.length);
+    const copied = document.execCommand("copy");
+    document.body.removeChild(textarea);
+    return copied;
+  };
 
   const handleCopy = async () => {
     if (!destinationValue) {
@@ -52,10 +81,17 @@ export function ProjectModal({
     }
 
     try {
-      await navigator.clipboard.writeText(destinationValue);
-      setCopyStatus("copied");
+      if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(destinationValue);
+        showCopyFeedback("copied");
+        return;
+      }
+
+      const copied = fallbackCopyToClipboard(destinationValue);
+      showCopyFeedback(copied ? "copied" : "failed");
     } catch {
-      setCopyStatus("idle");
+      const copied = fallbackCopyToClipboard(destinationValue);
+      showCopyFeedback(copied ? "copied" : "failed");
     }
   };
 
@@ -115,18 +151,37 @@ export function ProjectModal({
                 {destinationLabel ?? "Destination"}
               </span>
               {canCopy ? (
-                <button
-                  aria-label={copyStatus === "copied" ? "Copied" : "Copy link"}
-                  className="hover-lift-soft hover-press-soft absolute top-3 right-3 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-zinc-200 bg-white text-zinc-600 hover:border-sky-300 hover:bg-sky-50 hover:text-sky-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500 dark:border-white/10 dark:bg-white/8 dark:text-zinc-300 dark:hover:border-sky-300/30 dark:hover:bg-sky-400/10 dark:hover:text-sky-200"
-                  onClick={handleCopy}
-                  type="button"
-                >
-                  {copyStatus === "copied" ? (
-                    <CheckIcon className="h-4 w-4" />
-                  ) : (
-                    <CopyIcon className="h-4 w-4" />
-                  )}
-                </button>
+                <div className="absolute top-3 right-3 flex items-center gap-2">
+                  <span
+                    className={`rounded-full border px-2.5 py-1 text-[0.68rem] font-medium tracking-[0.14em] uppercase transition duration-300 ${
+                      copyStatus === "copied"
+                        ? "translate-y-0 opacity-100 border-emerald-300/40 bg-emerald-500/12 text-emerald-600 dark:border-emerald-300/20 dark:bg-emerald-400/10 dark:text-emerald-200"
+                        : copyStatus === "failed"
+                          ? "translate-y-0 opacity-100 border-rose-300/40 bg-rose-500/12 text-rose-600 dark:border-rose-300/20 dark:bg-rose-400/10 dark:text-rose-200"
+                        : "pointer-events-none translate-y-1 opacity-0"
+                    }`}
+                  >
+                    {copyStatus === "copied" ? "Copied" : "Copy failed"}
+                  </span>
+                  <button
+                    aria-label={
+                      copyStatus === "copied"
+                        ? "Copy again"
+                        : copyStatus === "failed"
+                          ? "Retry copy"
+                          : "Copy link"
+                    }
+                    className="hover-lift-soft hover-press-soft inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-zinc-200 bg-white text-zinc-600 hover:border-sky-300 hover:bg-sky-50 hover:text-sky-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500 dark:border-white/10 dark:bg-white/8 dark:text-zinc-300 dark:hover:border-sky-300/30 dark:hover:bg-sky-400/10 dark:hover:text-sky-200"
+                    onClick={handleCopy}
+                    type="button"
+                  >
+                    {copyStatus === "copied" ? (
+                      <CheckIcon className="h-4 w-4" />
+                    ) : (
+                      <CopyIcon className="h-4 w-4" />
+                    )}
+                  </button>
+                </div>
               ) : null}
               <span className="block min-w-0 truncate pr-12 font-medium sm:break-all">{destinationValue}</span>
             </div>
