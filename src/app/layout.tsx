@@ -13,13 +13,42 @@ const jetBrainsMono = JetBrains_Mono({
   subsets: ["latin"],
 });
 
+const siteTitle = `${brand.name} | ${brand.portfolioLabel}`;
+const siteDescription = `Modern portfolio homepage showcasing selected projects by ${brand.name}.`;
+const socialImage = "/site-preview.png";
+
 export const metadata: Metadata = {
-  title: `${brand.name} | ${brand.portfolioLabel}`,
-  description: `Modern portfolio homepage showcasing selected projects by ${brand.name}.`,
+  metadataBase: new URL(brand.siteUrl),
+  title: siteTitle,
+  description: siteDescription,
+  alternates: {
+    canonical: "/",
+  },
   icons: {
     icon: "/icon.png",
     shortcut: "/icon.png",
     apple: "/apple-icon.png",
+  },
+  openGraph: {
+    type: "website",
+    url: brand.siteUrl,
+    title: siteTitle,
+    description: siteDescription,
+    siteName: brand.name,
+    images: [
+      {
+        url: socialImage,
+        width: 1200,
+        height: 630,
+        alt: `${brand.name} preview image`,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteTitle,
+    description: siteDescription,
+    images: [socialImage],
   },
 };
 
