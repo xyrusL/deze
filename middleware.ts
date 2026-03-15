@@ -1,6 +1,8 @@
+import type { NextRequest } from "next/server";
 import { createSecureMiddleware } from "websecure-ez";
 
 const isDev = process.env.NODE_ENV !== "production";
+const publicCssPrefix = "/assets/css/";
 
 const secureMiddleware = createSecureMiddleware({
   contentSecurityPolicy: {
@@ -68,7 +70,18 @@ const secureMiddleware = createSecureMiddleware({
   },
 });
 
-export default secureMiddleware;
+export default function middleware(request: NextRequest) {
+  const response = secureMiddleware(request);
+
+  if (request.nextUrl.pathname.startsWith(publicCssPrefix)) {
+    // Allow Blogspot or other external sites to consume hosted CSS files.
+    response.headers.set("Access-Control-Allow-Origin", "*");
+    response.headers.set("Cross-Origin-Resource-Policy", "cross-origin");
+    response.headers.set("Cache-Control", "public, max-age=3600, s-maxage=86400");
+  }
+
+  return response;
+}
 
 export const config = {
   matcher: ["/((?!_next/static|_next/image|favicon.ico).*)"],

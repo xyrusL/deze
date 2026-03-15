@@ -61,6 +61,49 @@ npm run start
 - `public`
   Static assets such as logos and exported icons
 
+## Hosting CSS for Blogspot
+
+If you want Blogger or Blogspot to use a large stylesheet from this site, edit:
+
+```txt
+public/assets/css/riostyle.raw.css
+```
+
+The minified public file is generated automatically at:
+
+```txt
+public/assets/css/riostyle.css
+```
+
+That is the minified file served to external sites:
+
+```txt
+https://rioanime.deze.me/assets/css/riostyle.css
+```
+
+Use it from Blogspot with:
+
+```html
+<link rel="stylesheet" href="https://rioanime.deze.me/assets/css/riostyle.css">
+```
+
+The readable backup copy is also published at:
+
+```txt
+https://rioanime.deze.me/assets/css/riostyle.raw.css
+```
+
+Useful commands:
+
+```bash
+npm run build:rio-css
+npm run dev
+```
+
+`npm run dev` now watches `public/assets/css/riostyle.raw.css` and rebuilds the minified file automatically whenever you save changes.
+
+The middleware allows cross-origin access for files under `/assets/css/` so external sites can load them safely.
+
 ## Editing content
 
 Most of the visible portfolio content can be updated in:

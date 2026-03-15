@@ -1,5 +1,5 @@
 {
-  "name": "deze-dev",
+  "name": "deze-labs",
   "version": "0.1.0",
   "description": "Personal portfolio hub for Deze Labs, created by Paul (Xyrus).",
   "author": "Paul (Xyrus) <https://github.com/xyrusL>",
@@ -13,10 +13,15 @@
   },
   "private": true,
   "scripts": {
-    "dev": "next dev",
     "build": "next build",
+    "build:rio-css": "node scripts/build-rio-css.mjs",
+    "dev": "concurrently -k -n next,css \"npm:dev:next\" \"npm:dev:css\"",
+    "dev:css": "chokidar \"public/assets/css/riostyle.raw.css\" -c \"node scripts/build-rio-css.mjs\"",
+    "dev:next": "next dev",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "prebuild": "npm run build:rio-css",
+    "predev": "npm run build:rio-css"
   },
   "dependencies": {
     "next": "16.1.6",
@@ -29,8 +34,11 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "chokidar-cli": "^3.0.0",
+    "concurrently": "^9.2.1",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
+    "lightningcss": "^1.32.0",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
