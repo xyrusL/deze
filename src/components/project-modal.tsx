@@ -7,7 +7,7 @@ type ModalIconProps = {
 };
 
 type ProjectModalProps = {
-  description: string;
+  description?: string;
   destinationLabel?: string;
   destinationValue?: string;
   icon?: ComponentType<ModalIconProps>;
@@ -15,7 +15,7 @@ type ProjectModalProps = {
   onContinue?: () => void;
   primaryActionLabel?: string;
   secondaryActionLabel?: string;
-  title: string;
+  title?: string;
   typeLabel: string;
 };
 
@@ -137,12 +137,16 @@ export function ProjectModal({
                 </div>
               </div>
             ) : null}
-            <h3 id="project-modal-title" className="max-w-lg text-2xl font-semibold tracking-tight text-balance">
-              {title}
-            </h3>
-            <p className="max-w-lg text-sm leading-6 text-zinc-600 dark:text-zinc-300">
-              {description}
-            </p>
+            {title ? (
+              <h3 id="project-modal-title" className="max-w-lg text-2xl font-semibold tracking-tight text-balance">
+                {title}
+              </h3>
+            ) : null}
+            {description ? (
+              <p className="max-w-lg text-sm leading-6 text-zinc-600 dark:text-zinc-300">
+                {description}
+              </p>
+            ) : null}
           </div>
 
           {destinationValue ? (

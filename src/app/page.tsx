@@ -24,7 +24,7 @@ type ExternalTarget = {
   label: string;
   typeLabel: string;
   url?: string;
-  description: string;
+  description?: string;
 };
 
 export default function Home() {
@@ -116,7 +116,6 @@ export default function Home() {
         label: link.label,
         typeLabel: "Social profile",
         type: "unavailable",
-        description: "Check back later while this profile is being prepared.",
       });
 
       return;
@@ -183,7 +182,7 @@ export default function Home() {
           title={
             externalTarget.type === "external"
               ? `Open ${externalTarget.label} in a new tab?`
-              : `${externalTarget.label} is unavailable right now`
+              : undefined
           }
           typeLabel={externalTarget.typeLabel}
         />
