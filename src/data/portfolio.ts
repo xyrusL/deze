@@ -24,7 +24,7 @@ export const navigationItems: NavigationItem[] = [
   { label: "Home", href: "/", icon: "home" },
   { label: "Projects", href: "/#projects", icon: "projects" },
   { label: "About Me", href: "/about", icon: "about" },
-  { label: "Contact", href: "#footer", icon: "contact" },
+  { label: "Contact", href: "/contact", icon: "contact" },
 ];
 
 export const projects: Project[] = [
@@ -62,7 +62,7 @@ export const heroContent = {
 };
 
 export const overviewParagraphs = [
-  `Hi, welcome to my portfolio hub, ${brand.name}. I am Paul (Xyrus), and I am 22 years old.`,
+  `Hi, welcome to my portfolio hub, ${brand.name}. I am Paul (Xyrus), and I am 23 years old.`,
   "Right now I am working on hobby projects like the ones you see here, while learning and improving step by step.",
   "I enjoy trying new technology, especially AI, because it helps me work faster, stay productive, and build better than I could in the past.",
 ];
@@ -79,6 +79,19 @@ export const aboutPageContent = {
     "Even so, I still run into challenges because AI is just a tool. It cannot perfectly guess what I am thinking or what the final result should look like. That is why I still need to plan carefully and guide the process to get the outcome I want.",
     "So, in the end, I am doing what I would call \"vibe coding\" with a hybrid approach - combining my own ideas and decisions with AI assistance.",
   ],
+} as const;
+
+export const contactPageContent = {
+  eyebrow: "Contact",
+  title: "Let's connect 👋",
+  paragraphs: [
+    "Did my side projects impress you? If not, that's okay. I hope they sparked your interest, even just a little, and that's why you're here on this page.",
+    "If you'd like to collaborate with me or just chat, you can reach me using the contact information on this page. Feel free to send me a message; I'll reply as soon as possible.",
+  ],
+  thankYou: "Thank you! ✨",
+  contactNote: "Choose whichever contact option feels easiest for you.",
+  responseLabel: "Reply time",
+  responseValue: "I'll get back to you as soon as I can.",
 } as const;
 
 export const projectSectionContent = {
