@@ -261,12 +261,12 @@ export function ContactPageClient() {
                 >
                   <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-[linear-gradient(180deg,_transparent,_rgba(56,189,248,0.07))] dark:bg-[linear-gradient(180deg,_transparent,_rgba(56,189,248,0.08))]" />
 
-                  <div className="relative space-y-4">
-                    <span className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-sky-200/80 bg-sky-500/10 text-sky-700 shadow-[0_10px_24px_rgba(14,165,233,0.12)] dark:border-sky-300/20 dark:bg-sky-400/10 dark:text-sky-200">
+                  <div className="relative flex items-start gap-4 sm:gap-5">
+                    <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-sky-200/80 bg-sky-500/10 text-sky-700 shadow-[0_10px_24px_rgba(14,165,233,0.12)] dark:border-sky-300/20 dark:bg-sky-400/10 dark:text-sky-200">
                       <Icon className="h-5 w-5" />
                     </span>
 
-                    <div className="space-y-2">
+                    <div className="space-y-2 pt-0.5">
                       <p className="text-sm font-medium tracking-[0.2em] text-zinc-500 uppercase dark:text-zinc-400">
                         {item.label}
                       </p>
