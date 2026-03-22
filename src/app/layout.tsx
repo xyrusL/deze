@@ -13,16 +13,16 @@ const jetBrainsMono = JetBrains_Mono({
   subsets: ["latin"],
 });
 
-const siteTitle = "DEZE.Me | Porfolio Hub";
+const siteTitle = "Portfolio Hub | DEZE Labs";
 const siteDescription =
-  "Welcome to DEZE.Me, my portfolio hub for the work I am building, the ideas I am exploring, and the web projects I am continuing to improve.";
+  "Welcome to DEZE Labs, my portfolio hub for the work I am building, the ideas I am exploring, and the web projects I am continuing to improve.";
 const socialImage = "/site-preview.png";
 const siteName = "DEZE Labs";
 const websiteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   name: siteName,
-  alternateName: "DEZE.Me",
+  alternateName: "DEZE Labs",
   url: brand.siteUrl,
   description: siteDescription,
 };

@@ -1,8 +1,8 @@
 export const brand = {
-  name: "Deze Labs",
-  shortName: "Deze Labs",
+  name: "DEZE Labs",
+  shortName: "DEZE Labs",
   siteUrl: "https://landing.deze.me",
-  logoAlt: "Deze Labs logo",
+  logoAlt: "DEZE Labs logo",
   tagline: "Learning, building, improving.",
   portfolioLabel: "Portfolio Hub",
 } as const;
