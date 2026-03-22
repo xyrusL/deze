@@ -2,6 +2,7 @@ import {
   CopyrightIcon,
   FacebookIcon,
   GitHubIcon,
+  LinkedInIcon,
   TikTokIcon,
 } from "@/components/icons";
 import type { SocialLink } from "@/data/portfolio";
@@ -20,6 +21,7 @@ export function SiteFooter({
   const year = new Date().getFullYear();
   const socialIcons = {
     github: GitHubIcon,
+    linkedin: LinkedInIcon,
     facebook: FacebookIcon,
     tiktok: TikTokIcon,
   } as const;

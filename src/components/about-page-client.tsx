@@ -13,6 +13,7 @@ import { ProjectModal } from "@/components/project-modal";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import {
+  aboutTechStack,
   aboutPageContent,
   footerContent,
   navigationItems,
@@ -57,6 +58,27 @@ const focusPoints = [
 const githubLink = socialLinks.find(
   (link) => link.platform === "github" && link.status === "active",
 );
+
+const stackToneClasses = {
+  amber:
+    "border-amber-300/70 bg-amber-400/15 text-amber-700 shadow-[0_10px_24px_rgba(245,158,11,0.14)] dark:border-amber-300/20 dark:bg-amber-300/12 dark:text-amber-200",
+  blue:
+    "border-blue-300/70 bg-blue-500/12 text-blue-700 shadow-[0_10px_24px_rgba(59,130,246,0.14)] dark:border-blue-300/20 dark:bg-blue-300/12 dark:text-blue-200",
+  orange:
+    "border-orange-300/70 bg-orange-500/12 text-orange-700 shadow-[0_10px_24px_rgba(249,115,22,0.14)] dark:border-orange-300/20 dark:bg-orange-300/12 dark:text-orange-200",
+  sky:
+    "border-sky-300/70 bg-sky-500/12 text-sky-700 shadow-[0_10px_24px_rgba(14,165,233,0.14)] dark:border-sky-300/20 dark:bg-sky-300/12 dark:text-sky-200",
+  zinc:
+    "border-zinc-300/70 bg-zinc-900/8 text-zinc-700 shadow-[0_10px_24px_rgba(63,63,70,0.12)] dark:border-zinc-300/20 dark:bg-white/10 dark:text-zinc-100",
+  cyan:
+    "border-cyan-300/70 bg-cyan-500/12 text-cyan-700 shadow-[0_10px_24px_rgba(6,182,212,0.14)] dark:border-cyan-300/20 dark:bg-cyan-300/12 dark:text-cyan-200",
+  teal:
+    "border-teal-300/70 bg-teal-500/12 text-teal-700 shadow-[0_10px_24px_rgba(20,184,166,0.14)] dark:border-teal-300/20 dark:bg-teal-300/12 dark:text-teal-200",
+  violet:
+    "border-violet-300/70 bg-violet-500/12 text-violet-700 shadow-[0_10px_24px_rgba(139,92,246,0.14)] dark:border-violet-300/20 dark:bg-violet-300/12 dark:text-violet-200",
+  emerald:
+    "border-emerald-300/70 bg-emerald-500/12 text-emerald-700 shadow-[0_10px_24px_rgba(16,185,129,0.14)] dark:border-emerald-300/20 dark:bg-emerald-300/12 dark:text-emerald-200",
+} as const;
 
 export function AboutPageClient() {
   const [externalTarget, setExternalTarget] = useState<ExternalTarget | null>(null);
@@ -110,9 +132,9 @@ export function AboutPageClient() {
   };
 
   const handleOpenSocial = (link: SocialLink) => {
-    if (link.status === "unavailable") {
+    if (link.status !== "active") {
       setExternalTarget({
-        label: link.label,
+        label: `${link.label} / ${link.username}`,
         typeLabel: "Social profile",
         type: "unavailable",
       });
@@ -278,6 +300,54 @@ export function AboutPageClient() {
                 </div>
               </article>
             ))}
+          </section>
+
+          <section className="relative overflow-hidden rounded-[1.6rem] border border-white/65 bg-white/80 p-4 shadow-[0_20px_60px_rgba(15,23,42,0.08)] backdrop-blur-xl dark:border-white/10 dark:bg-white/8 dark:shadow-[0_20px_60px_rgba(0,0,0,0.4)] sm:rounded-[2rem] sm:p-8">
+            <div className="pointer-events-none absolute right-0 top-0 h-36 w-36 rounded-full bg-sky-400/12 blur-3xl dark:bg-sky-400/14" />
+            <div className="relative">
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+                <div className="space-y-2">
+                  <p className="text-sm font-medium tracking-[0.2em] text-zinc-500 uppercase dark:text-zinc-400">
+                    Tech stack
+                  </p>
+                  <h2 className="text-[1.45rem] font-semibold tracking-tight text-zinc-950 dark:text-white sm:text-[1.65rem]">
+                    The tools I currently use the most
+                  </h2>
+                </div>
+                <p className="max-w-xl text-sm leading-6 text-zinc-600 dark:text-zinc-300">
+                  These are the main languages, frameworks, and backend tools I
+                  usually reach for when building side projects.
+                </p>
+              </div>
+
+              <div className="mt-5 grid gap-4 lg:grid-cols-3">
+                {aboutTechStack.map((group) => (
+                  <article
+                    key={group.category}
+                    className="hover-card-premium hover-shadow-premium hover-lift-soft rounded-[1.35rem] border border-white/70 bg-white/75 p-4 shadow-[0_12px_30px_rgba(15,23,42,0.05)] dark:border-white/10 dark:bg-white/6 sm:p-5"
+                  >
+                    <p className="text-[0.72rem] font-medium tracking-[0.2em] text-zinc-500 uppercase dark:text-zinc-400">
+                      {group.category}
+                    </p>
+
+                    <div className="mt-4 flex flex-wrap gap-2.5">
+                      {group.items.map((item) => (
+                        <span
+                          key={item.label}
+                          className={`inline-flex items-center gap-2 rounded-full border px-3 py-2 text-sm font-medium ${stackToneClasses[item.tone]}`}
+                        >
+                          <span
+                            aria-hidden="true"
+                            className="h-2 w-2 rounded-full bg-current opacity-75"
+                          />
+                          {item.label}
+                        </span>
+                      ))}
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </div>
           </section>
         </main>
 

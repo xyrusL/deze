@@ -101,9 +101,9 @@ export function ContactPageClient() {
   };
 
   const handleOpenSocial = (link: SocialLink) => {
-    if (link.status === "unavailable") {
+    if (link.status !== "active") {
       setExternalTarget({
-        label: link.label,
+        label: `${link.label} / ${link.username}`,
         typeLabel: "Social profile",
         type: "unavailable",
       });

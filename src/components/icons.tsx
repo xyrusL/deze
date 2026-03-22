@@ -174,6 +174,26 @@ export const TikTokIcon = createIcon(
   </>,
 );
 
+export const LinkedInIcon = createIcon(
+  <>
+    <path
+      d="M6.75 8.5V18"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.75"
+    />
+    <path
+      d="M10.75 18v-5.25a2.75 2.75 0 0 1 5.5 0V18"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.75"
+    />
+    <circle cx="6.75" cy="5.75" fill="currentColor" r="1.25" />
+  </>,
+);
+
 export const CopyIcon = createIcon(
   <>
     <rect

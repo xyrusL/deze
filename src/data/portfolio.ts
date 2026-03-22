@@ -14,10 +14,10 @@ export type NavigationItem = {
 
 export type SocialLink = {
   label: string;
-  platform: "github" | "facebook" | "tiktok";
+  platform: "github" | "facebook" | "tiktok" | "linkedin";
   url: string;
   username: string;
-  status: "active" | "unavailable";
+  status: "active" | "in-progress" | "unavailable";
 };
 
 export const navigationItems: NavigationItem[] = [
@@ -81,6 +81,31 @@ export const aboutPageContent = {
   ],
 } as const;
 
+export const aboutTechStack = [
+  {
+    category: "Languages",
+    items: [
+      { label: "JavaScript", tone: "amber" },
+      { label: "Python", tone: "blue" },
+      { label: "HTML5", tone: "orange" },
+      { label: "CSS3", tone: "sky" },
+    ],
+  },
+  {
+    category: "Frameworks & libraries",
+    items: [
+      { label: "Next.js", tone: "zinc" },
+      { label: "jQuery", tone: "cyan" },
+      { label: "Tailwind CSS", tone: "teal" },
+      { label: "Bootstrap", tone: "violet" },
+    ],
+  },
+  {
+    category: "Backend & database",
+    items: [{ label: "Supabase", tone: "emerald" }],
+  },
+] as const;
+
 export const contactPageContent = {
   eyebrow: "Contact",
   title: "Let's connect",
@@ -112,6 +137,13 @@ export const socialLinks: SocialLink[] = [
     url: "https://github.com/xyrusL",
     username: "xyrusL",
     status: "active",
+  },
+  {
+    label: "LinkedIn",
+    platform: "linkedin",
+    url: "",
+    username: "Still in progress",
+    status: "in-progress",
   },
   {
     label: "Facebook",
