@@ -1,13 +1,13 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import { FaGithub } from "react-icons/fa6";
 import {
-  BrokenComputerIcon,
-  GitHubIcon,
-  MailIcon,
-  OrbitIcon,
-  SparkIcon,
-} from "@/components/icons";
+  HiOutlineChatBubbleLeftRight,
+  HiOutlineEnvelope,
+  HiOutlineExclamationTriangle,
+  HiOutlineSparkles,
+} from "react-icons/hi2";
 import { ProjectModal } from "@/components/project-modal";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
@@ -34,14 +34,14 @@ const contactMoments = [
     value: "Have an idea you want to build together?",
     detail:
       "If you think we could make something useful together, feel free to reach out.",
-    icon: SparkIcon,
+    icon: HiOutlineSparkles,
   },
   {
     label: "Say hello",
     value: "Questions, feedback, or a simple message are welcome.",
     detail:
       "Even a small note is enough if one of the projects here caught your attention.",
-    icon: OrbitIcon,
+    icon: HiOutlineChatBubbleLeftRight,
   },
 ] as const;
 
@@ -184,7 +184,7 @@ export function ContactPageClient() {
               <aside className="rounded-[1.35rem] border border-sky-200/70 bg-sky-500/8 p-4 shadow-[0_16px_40px_rgba(14,165,233,0.08)] dark:border-sky-300/20 dark:bg-sky-400/10 sm:rounded-[1.75rem] sm:p-6">
                 <div className="flex items-center gap-3">
                   <span className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-sky-200/80 bg-white/75 text-sky-700 shadow-[0_8px_20px_rgba(14,165,233,0.12)] dark:border-sky-300/20 dark:bg-white/10 dark:text-sky-200">
-                    <MailIcon className="h-5 w-5" />
+                    <HiOutlineEnvelope className="h-5 w-5" />
                   </span>
                   <div>
                     <p className="text-[0.7rem] font-medium tracking-[0.18em] text-sky-700 uppercase dark:text-sky-200">
@@ -201,7 +201,7 @@ export function ContactPageClient() {
                     type="button"
                   >
                     <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-sky-200/80 bg-white/75 text-sky-700 dark:border-sky-300/20 dark:bg-white/10 dark:text-sky-200">
-                      <MailIcon className="h-5 w-5" />
+                      <HiOutlineEnvelope className="h-5 w-5" />
                     </span>
                     <div className="min-w-0">
                       <p className="text-[0.7rem] font-medium tracking-[0.18em] text-zinc-500 uppercase dark:text-zinc-400">
@@ -220,7 +220,7 @@ export function ContactPageClient() {
                       type="button"
                     >
                       <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-sky-200/80 bg-white/75 text-sky-700 dark:border-sky-300/20 dark:bg-white/10 dark:text-sky-200">
-                        <GitHubIcon className="h-5 w-5" />
+                        <FaGithub className="h-5 w-5" />
                       </span>
                       <div className="min-w-0">
                         <p className="text-[0.7rem] font-medium tracking-[0.18em] text-zinc-500 uppercase dark:text-zinc-400">
@@ -302,7 +302,9 @@ export function ContactPageClient() {
               ? aboutPageContent.email
               : selectedTargetUrl.replace(/^https?:\/\//, "")
           }
-          icon={externalTarget.type === "unavailable" ? BrokenComputerIcon : undefined}
+          icon={
+            externalTarget.type === "unavailable" ? HiOutlineExclamationTriangle : undefined
+          }
           onContinue={
             externalTarget.type === "unavailable" ? undefined : handleContinue
           }

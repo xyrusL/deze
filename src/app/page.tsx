@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import { HiOutlineExclamationTriangle } from "react-icons/hi2";
 import { HeroSection } from "@/components/hero-section";
-import { BrokenComputerIcon } from "@/components/icons";
 import { ProjectModal } from "@/components/project-modal";
 import { ProjectsSection } from "@/components/projects-section";
 import { SiteFooter } from "@/components/site-footer";
@@ -174,7 +174,7 @@ export default function Home() {
           description={externalTarget.description}
           destinationLabel={externalTarget.type === "external" ? "Destination" : undefined}
           destinationValue={externalTarget.type === "external" ? selectedProjectUrl.replace(/^https?:\/\//, "") : undefined}
-          icon={externalTarget.type === "unavailable" ? BrokenComputerIcon : undefined}
+          icon={externalTarget.type === "unavailable" ? HiOutlineExclamationTriangle : undefined}
           onContinue={externalTarget.type === "external" ? handleProjectLaunch : undefined}
           onClose={() => setExternalTarget(null)}
           primaryActionLabel={externalTarget.type === "external" ? "Open link" : undefined}

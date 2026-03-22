@@ -1,4 +1,4 @@
-import { ArrowUpRightIcon } from "@/components/icons";
+import { HiOutlineArrowUpRight } from "react-icons/hi2";
 import type { Project } from "@/data/portfolio";
 
 type ProjectCardProps = {
@@ -34,7 +34,7 @@ export function ProjectCard({ index, project, onOpen }: ProjectCardProps) {
             className="hover-chip-premium inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-zinc-200 bg-white text-zinc-700 shadow-sm group-hover:border-sky-300 group-hover:bg-sky-500 group-hover:text-white dark:border-white/10 dark:bg-white/10 dark:text-zinc-200 dark:group-hover:border-sky-300/40 dark:group-hover:bg-sky-400 dark:group-hover:text-slate-950 sm:h-10 sm:w-10"
           >
             <span className="hover-icon-drift">
-              <ArrowUpRightIcon />
+              <HiOutlineArrowUpRight />
             </span>
           </span>
         </div>

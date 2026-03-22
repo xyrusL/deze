@@ -1,6 +1,10 @@
-import { ArrowUpRightIcon, CheckIcon, CopyIcon } from "@/components/icons";
 import type { ComponentType } from "react";
 import { useEffect, useRef, useState } from "react";
+import {
+  HiOutlineArrowUpRight,
+  HiOutlineCheck,
+  HiOutlineClipboardDocument,
+} from "react-icons/hi2";
 
 type ModalIconProps = {
   className?: string;
@@ -180,9 +184,9 @@ export function ProjectModal({
                     type="button"
                   >
                     {copyStatus === "copied" ? (
-                      <CheckIcon className="h-4 w-4" />
+                      <HiOutlineCheck className="h-4 w-4" />
                     ) : (
-                      <CopyIcon className="h-4 w-4" />
+                      <HiOutlineClipboardDocument className="h-4 w-4" />
                     )}
                   </button>
                 </div>
@@ -206,7 +210,7 @@ export function ProjectModal({
                 type="button"
               >
                 {primaryActionLabel}
-                <ArrowUpRightIcon />
+                <HiOutlineArrowUpRight />
               </button>
             ) : null}
           </div>

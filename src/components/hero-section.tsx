@@ -1,5 +1,9 @@
 import Link from "next/link";
-import { OrbitIcon, ProfileIcon, SparkIcon } from "@/components/icons";
+import {
+  HiOutlinePaintBrush,
+  HiOutlineSparkles,
+  HiOutlineUserCircle,
+} from "react-icons/hi2";
 
 type HeroSectionProps = {
   eyebrow: string;
@@ -32,11 +36,11 @@ export function HeroSection({
             </p>
             <div className="flex flex-wrap gap-3 pt-2">
               <span className="inline-flex items-center gap-2 rounded-full border border-white/50 bg-white/65 px-3 py-2 text-xs font-medium tracking-[0.12em] text-zinc-700 uppercase shadow-[0_10px_24px_rgba(15,23,42,0.06)] dark:border-white/10 dark:bg-white/8 dark:text-zinc-200">
-                <SparkIcon className="h-4 w-4 text-sky-500 dark:text-sky-300" />
+                <HiOutlineSparkles className="h-4 w-4 text-sky-500 dark:text-sky-300" />
                 Building step by step
               </span>
               <span className="inline-flex items-center gap-2 rounded-full border border-white/50 bg-white/65 px-3 py-2 text-xs font-medium tracking-[0.12em] text-zinc-700 uppercase shadow-[0_10px_24px_rgba(15,23,42,0.06)] dark:border-white/10 dark:bg-white/8 dark:text-zinc-200">
-                <OrbitIcon className="h-4 w-4 text-sky-500 dark:text-sky-300" />
+                <HiOutlinePaintBrush className="h-4 w-4 text-sky-500 dark:text-sky-300" />
                 Frontend focused
               </span>
             </div>
@@ -50,7 +54,7 @@ export function HeroSection({
         >
           <div className="flex items-center gap-3">
             <span className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-sky-200/80 bg-sky-500/10 text-sky-700 shadow-[0_8px_20px_rgba(14,165,233,0.16)] dark:border-sky-300/20 dark:bg-sky-400/10 dark:text-sky-200">
-              <ProfileIcon className="h-5 w-5" />
+              <HiOutlineUserCircle className="h-5 w-5" />
             </span>
             <h2 id="overview-heading" className="text-lg font-semibold tracking-tight">
               Overview

@@ -1,10 +1,10 @@
 import {
-  CopyrightIcon,
-  FacebookIcon,
-  GitHubIcon,
-  LinkedInIcon,
-  TikTokIcon,
-} from "@/components/icons";
+  FaRegCopyright,
+  FaFacebookF,
+  FaGithub,
+  FaLinkedinIn,
+  FaTiktok,
+} from "react-icons/fa6";
 import type { SocialLink } from "@/data/portfolio";
 
 type SiteFooterProps = {
@@ -20,10 +20,10 @@ export function SiteFooter({
 }: SiteFooterProps) {
   const year = new Date().getFullYear();
   const socialIcons = {
-    github: GitHubIcon,
-    linkedin: LinkedInIcon,
-    facebook: FacebookIcon,
-    tiktok: TikTokIcon,
+    github: FaGithub,
+    linkedin: FaLinkedinIn,
+    facebook: FaFacebookF,
+    tiktok: FaTiktok,
   } as const;
   const actionClassName =
     "hover-chip-premium hover-press-soft inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/60 bg-white/70 text-zinc-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500 dark:border-white/10 dark:bg-white/5 dark:text-zinc-200 dark:hover:border-sky-300/40 dark:hover:text-sky-200 sm:h-11 sm:w-11";
@@ -36,7 +36,7 @@ export function SiteFooter({
       <div className="flex items-start gap-3 sm:items-center">
         <p className="inline-flex max-w-2xl items-start gap-1 text-balance">
           <span className="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center text-zinc-500 dark:text-zinc-400">
-            <CopyrightIcon className="h-4 w-4" />
+            <FaRegCopyright className="h-4 w-4" />
           </span>
           <span>{`${year} ${copyright}`}</span>
         </p>

@@ -1,21 +1,24 @@
 "use client";
 
 import Image from "next/image";
-import { PiTShirtLight } from "react-icons/pi";
-import { useEffect, useMemo, useState } from "react";
+import type { IconType } from "react-icons";
 import {
-  BrokenComputerIcon,
-  ClockIcon,
-  FacebookIcon,
-  GitHubIcon,
-  LinkedInIcon,
-  LocationIcon,
-  PhilippinesFlagIcon,
-  OrbitIcon,
-  ProfileIcon,
-  SparkIcon,
-  TikTokIcon,
-} from "@/components/icons";
+  FaFacebookF,
+  FaGithub,
+  FaLinkedinIn,
+  FaTiktok,
+} from "react-icons/fa6";
+import {
+  HiOutlineClock,
+  HiOutlineExclamationTriangle,
+  HiOutlineLightBulb,
+  HiOutlineMapPin,
+  HiOutlineSparkles,
+  HiOutlineSquares2X2,
+  HiOutlineUserCircle,
+} from "react-icons/hi2";
+import { PiFlagPennantLight, PiTShirtLight } from "react-icons/pi";
+import { useEffect, useMemo, useState } from "react";
 import {
   ProfileDecoration,
   profileDecorationOptions,
@@ -51,19 +54,19 @@ const focusPoints = [
     label: "Approach",
     value: "Hybrid workflow",
     detail: "I mix my own direction and decisions with AI support when it helps.",
-    icon: SparkIcon,
+    icon: HiOutlineSparkles,
   },
   {
     label: "Why I build",
     value: "Purpose first",
     detail: "Every project needs a clear reason to exist before I spend time making it.",
-    icon: OrbitIcon,
+    icon: HiOutlineLightBulb,
   },
   {
     label: "What I make",
     value: "Apps, sites, and tools",
     detail: "My portfolio covers different kinds of projects, each built for a different use.",
-    icon: ProfileIcon,
+    icon: HiOutlineSquares2X2,
   },
 ] as const;
 
@@ -100,10 +103,10 @@ const profileSummary = {
 const avatarDecorationVariant: ProfileDecorationVariant = "catEars";
 
 const socialIcons = {
-  github: GitHubIcon,
-  linkedin: LinkedInIcon,
-  facebook: FacebookIcon,
-  tiktok: TikTokIcon,
+  github: FaGithub,
+  linkedin: FaLinkedinIn,
+  facebook: FaFacebookF,
+  tiktok: FaTiktok,
 } as const;
 
 const socialToneClasses = {
@@ -119,7 +122,7 @@ const socialToneClasses = {
 
 type ProfileMetaItem = {
   className?: string;
-  icon: typeof LocationIcon | typeof PhilippinesFlagIcon;
+  icon: IconType;
   label: string;
   value: string;
 };
@@ -128,13 +131,13 @@ const profileMetaItems: ProfileMetaItem[] = [
   {
     label: "Location",
     value: profileSummary.location,
-    icon: LocationIcon,
+    icon: HiOutlineMapPin,
     className: "sm:col-span-2",
   },
   {
     label: "Country",
     value: profileSummary.country,
-    icon: PhilippinesFlagIcon,
+    icon: PiFlagPennantLight,
   },
 ] as const;
 
@@ -314,7 +317,7 @@ export function AboutPageClient() {
 
                     <div className="inline-flex w-full items-center gap-2 rounded-full border border-sky-200/80 bg-white/75 px-3.5 py-2 text-sm font-medium text-zinc-700 dark:border-sky-300/20 dark:bg-white/8 dark:text-zinc-200">
                       <span className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-sky-200/80 bg-sky-500/10 text-sky-700 dark:border-sky-300/20 dark:bg-sky-400/10 dark:text-sky-200">
-                        <ClockIcon className="h-4 w-4" />
+                        <HiOutlineClock className="h-4 w-4" />
                       </span>
                       <div className="min-w-0">
                         <p className="text-[0.63rem] leading-4 tracking-[0.16em] text-zinc-500 uppercase dark:text-zinc-400">
@@ -401,7 +404,7 @@ export function AboutPageClient() {
             <div className="relative">
               <div className="flex items-center gap-3">
                 <span className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-sky-200/80 bg-sky-500/10 text-sky-700 shadow-[0_8px_20px_rgba(14,165,233,0.16)] dark:border-sky-300/20 dark:bg-sky-400/10 dark:text-sky-200">
-                  <ProfileIcon className="h-5 w-5" />
+                  <HiOutlineUserCircle className="h-5 w-5" />
                 </span>
                 <div>
                   <p className="text-[0.7rem] font-medium tracking-[0.18em] text-zinc-500 uppercase dark:text-zinc-400">
@@ -451,7 +454,7 @@ export function AboutPageClient() {
               >
                 <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-[linear-gradient(180deg,_transparent,_rgba(56,189,248,0.07))] dark:bg-[linear-gradient(180deg,_transparent,_rgba(56,189,248,0.08))]" />
                 <div className="relative space-y-3 sm:space-y-4">
-                  <p className="text-sm font-medium tracking-[0.2em] text-zinc-500 uppercase dark:text-zinc-400">
+                  <p className="inline-flex w-fit rounded-full border border-sky-300/20 bg-sky-400/10 px-3 py-1 text-[0.72rem] font-bold tracking-[0.24em] text-sky-700 uppercase shadow-[0_8px_20px_rgba(14,165,233,0.08)] dark:border-sky-300/18 dark:bg-sky-400/12 dark:text-sky-200">
                     {index === 0 ? "How I work" : "What keeps it real"}
                   </p>
                   {column.map((paragraph) => (
@@ -472,7 +475,7 @@ export function AboutPageClient() {
             <div className="relative">
               <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
                 <div className="space-y-2">
-                  <p className="text-sm font-medium tracking-[0.2em] text-zinc-500 uppercase dark:text-zinc-400">
+                  <p className="inline-flex w-fit rounded-full border border-sky-300/20 bg-sky-400/10 px-3 py-1 text-[0.72rem] font-bold tracking-[0.24em] text-sky-700 uppercase shadow-[0_8px_20px_rgba(14,165,233,0.08)] dark:border-sky-300/18 dark:bg-sky-400/12 dark:text-sky-200">
                     Tech stack
                   </p>
                   <h2 className="text-[1.45rem] font-semibold tracking-tight text-zinc-950 dark:text-white sm:text-[1.65rem]">
@@ -528,7 +531,9 @@ export function AboutPageClient() {
           description={externalTarget.description}
           destinationLabel="Destination"
           destinationValue={selectedTargetUrl.replace(/^https?:\/\//, "")}
-          icon={externalTarget.type === "unavailable" ? BrokenComputerIcon : undefined}
+          icon={
+            externalTarget.type === "unavailable" ? HiOutlineExclamationTriangle : undefined
+          }
           onContinue={
             externalTarget.type === "unavailable" ? undefined : handleContinue
           }

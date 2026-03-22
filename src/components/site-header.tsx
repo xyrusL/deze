@@ -1,14 +1,19 @@
 import Image from "next/image";
 import Link from "next/link";
-import { GridIcon, HomeIcon, MailIcon, ProfileIcon } from "@/components/icons";
+import {
+  HiOutlineEnvelope,
+  HiOutlineHome,
+  HiOutlineSquares2X2,
+  HiOutlineUserCircle,
+} from "react-icons/hi2";
 import { brand } from "@/data/brand";
 import type { NavigationItem } from "@/data/portfolio";
 
 const navigationIcons = {
-  home: HomeIcon,
-  projects: GridIcon,
-  about: ProfileIcon,
-  contact: MailIcon,
+  home: HiOutlineHome,
+  projects: HiOutlineSquares2X2,
+  about: HiOutlineUserCircle,
+  contact: HiOutlineEnvelope,
 } as const;
 
 type SiteHeaderProps = {
