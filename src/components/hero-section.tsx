@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { OrbitIcon, ProfileIcon, SparkIcon } from "@/components/icons";
 
 type HeroSectionProps = {
@@ -43,15 +44,15 @@ export function HeroSection({
         </div>
 
         <section
-          id="about"
-          aria-labelledby="about-heading"
+          id="overview"
+          aria-labelledby="overview-heading"
           className="rounded-[1.75rem] border border-zinc-200/80 bg-zinc-50/90 p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.65)] dark:border-white/10 dark:bg-black/20 sm:p-6"
         >
-            <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3">
             <span className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-sky-200/80 bg-sky-500/10 text-sky-700 shadow-[0_8px_20px_rgba(14,165,233,0.16)] dark:border-sky-300/20 dark:bg-sky-400/10 dark:text-sky-200">
               <ProfileIcon className="h-5 w-5" />
             </span>
-            <h2 id="about-heading" className="text-lg font-semibold tracking-tight">
+            <h2 id="overview-heading" className="text-lg font-semibold tracking-tight">
               Overview
             </h2>
           </div>
@@ -59,6 +60,14 @@ export function HeroSection({
             {overviewParagraphs.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
+          </div>
+          <div className="mt-6">
+            <Link
+              className="hover-chip-premium hover-press-soft inline-flex items-center rounded-full border border-sky-200/80 bg-sky-500/10 px-4 py-2 text-sm font-medium text-sky-700 transition hover:bg-sky-500/16 hover:text-sky-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500 dark:border-sky-300/20 dark:bg-sky-400/10 dark:text-sky-200 dark:hover:bg-sky-400/16 dark:hover:text-sky-100"
+              href="/about"
+            >
+              Read more
+            </Link>
           </div>
         </section>
       </div>

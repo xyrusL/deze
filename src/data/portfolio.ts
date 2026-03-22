@@ -21,9 +21,9 @@ export type SocialLink = {
 };
 
 export const navigationItems: NavigationItem[] = [
-  { label: "Home", href: "#home", icon: "home" },
-  { label: "Projects", href: "#projects", icon: "projects" },
-  { label: "About", href: "#about", icon: "about" },
+  { label: "Home", href: "/", icon: "home" },
+  { label: "Projects", href: "/#projects", icon: "projects" },
+  { label: "About Me", href: "/about", icon: "about" },
   { label: "Contact", href: "#footer", icon: "contact" },
 ];
 
@@ -66,6 +66,20 @@ export const overviewParagraphs = [
   "Right now I am working on hobby projects like the ones you see here, while learning and improving step by step.",
   "I enjoy trying new technology, especially AI, because it helps me work faster, stay productive, and build better than I could in the past.",
 ];
+
+export const aboutPageContent = {
+  eyebrow: "About me",
+  title: "A little more about me and how I build.",
+  intro:
+    "Hello, my name is Paul. I am 23 years old. Welcome to my portfolio hub (DEZE), where I showcase all of my side projects, each serving a different purpose - from apps to a business website, a streaming site, and more.",
+  email: "paul@account.deze.me",
+  paragraphs: [
+    "Building everything from scratch can be a hassle for me: coming up with design ideas, figuring out how to implement them, and deciding on features and functionality. Most importantly, every project needs a clear purpose; without that, there is no reason for me to develop it in the first place.",
+    "The kind of hustle I am talking about is very different from what it used to be in a world without AI. Now, thanks to advanced technology, AI helps me a lot by reducing the time I spend brainstorming ideas, writing code, and fixing bugs. What used to take reading countless articles and digging through Stack Overflow can now start with a single AI prompt.",
+    "Even so, I still run into challenges because AI is just a tool. It cannot perfectly guess what I am thinking or what the final result should look like. That is why I still need to plan carefully and guide the process to get the outcome I want.",
+    "So, in the end, I am doing what I would call \"vibe coding\" with a hybrid approach - combining my own ideas and decisions with AI assistance.",
+  ],
+} as const;
 
 export const projectSectionContent = {
   eyebrow: "Selected Projects",
