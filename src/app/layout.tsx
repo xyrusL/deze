@@ -17,7 +17,7 @@ const siteTitle = "DEZE.Me | Porfolio Hub";
 const siteDescription =
   "Welcome to DEZE.Me, my portfolio hub for the work I am building, the ideas I am exploring, and the web projects I am continuing to improve.";
 const socialImage = "/site-preview.png";
-const siteName = "DEZE";
+const siteName = "DEZE Labs";
 const websiteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
