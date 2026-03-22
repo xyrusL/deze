@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { PiTShirtLight } from "react-icons/pi";
 import { useEffect, useMemo, useState } from "react";
 import {
   BrokenComputerIcon,
@@ -247,47 +248,47 @@ export function AboutPageClient() {
             <div className="pointer-events-none absolute -right-12 top-0 h-40 w-40 rounded-full bg-sky-400/18 blur-3xl dark:bg-sky-400/20" />
             <div className="pointer-events-none absolute left-0 bottom-0 h-32 w-32 rounded-full bg-white/25 blur-2xl dark:bg-white/8" />
 
-            <div className="relative grid items-start gap-5 lg:grid-cols-[minmax(18rem,22rem)_minmax(0,1.2fr)] lg:gap-8">
-              <aside className="overflow-hidden rounded-[1.55rem] border border-zinc-200/80 bg-zinc-50/90 p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.65),0_18px_45px_rgba(15,23,42,0.12)] dark:border-white/10 dark:bg-black/20 sm:rounded-[1.85rem] sm:p-6">
+            <div className="relative grid items-start gap-5 lg:grid-cols-[minmax(20rem,0.82fr)_minmax(0,1.58fr)] lg:gap-5 xl:grid-cols-[minmax(21rem,0.8fr)_minmax(0,1.6fr)] xl:gap-6">
+              <aside className="self-start overflow-hidden rounded-[1.55rem] border border-zinc-200/80 bg-zinc-50/90 p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.65),0_18px_45px_rgba(15,23,42,0.12)] dark:border-white/10 dark:bg-black/20 sm:rounded-[1.85rem] sm:p-5">
                 <div className="relative isolate">
-                  <div className="pointer-events-none absolute inset-x-8 top-6 h-32 rounded-full bg-sky-400/18 blur-3xl dark:bg-sky-400/18" />
+                  <div className="pointer-events-none absolute inset-x-8 top-5 h-28 rounded-full bg-sky-400/18 blur-3xl dark:bg-sky-400/18" />
+                  <button
+                    aria-label="Open avatar decoration picker"
+                    className="hover-chip-premium hover-press-soft absolute right-0 top-0 z-10 inline-flex h-10 w-10 items-center justify-center rounded-full border border-sky-200/20 bg-[linear-gradient(180deg,rgba(18,31,46,0.94),rgba(10,18,30,0.98))] text-sky-100 shadow-[0_10px_22px_rgba(2,8,23,0.28)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500 dark:border-sky-200/12 sm:right-1 sm:top-1"
+                    onClick={() => setIsDecorationPickerOpen(true)}
+                    title="Avatar decoration"
+                    type="button"
+                  >
+                    <PiTShirtLight className="h-4 w-4" />
+                  </button>
                   <div className="relative mx-auto w-fit">
                     <ProfileDecoration variant={activeDecoration}>
                       <div className="relative mx-auto flex w-fit items-center justify-center rounded-full border border-white/70 bg-white/65 p-2.5 shadow-[0_18px_40px_rgba(15,23,42,0.12)] dark:border-white/10 dark:bg-white/8">
-                        <div className="relative h-52 w-52 overflow-hidden rounded-full border border-sky-200/80 bg-sky-500/10 ring-4 ring-white/60 dark:border-sky-300/20 dark:ring-white/8 sm:h-60 sm:w-60">
+                        <div className="relative h-40 w-40 overflow-hidden rounded-full border border-sky-200/80 bg-sky-500/10 ring-4 ring-white/60 dark:border-sky-300/20 dark:ring-white/8 sm:h-48 sm:w-48">
                           <Image
                             alt="About page photo"
                             className="object-cover"
                             fill
                             priority
-                            sizes="(max-width: 1024px) 60vw, 15rem"
+                            sizes="(max-width: 1024px) 52vw, 12rem"
                             src="/images/about-photo.png"
                           />
                         </div>
                       </div>
                     </ProfileDecoration>
 
-                    <button
-                      aria-label="Open avatar decoration picker"
-                      className="hover-chip-premium hover-press-soft absolute right-0 top-0 inline-flex h-10 w-10 translate-x-[30%] -translate-y-[14%] items-center justify-center rounded-full border border-sky-200/20 bg-[linear-gradient(180deg,rgba(18,31,46,0.94),rgba(10,18,30,0.98))] text-sky-100 shadow-[0_10px_22px_rgba(2,8,23,0.28)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500 dark:border-sky-200/12"
-                      onClick={() => setIsDecorationPickerOpen(true)}
-                      title="Avatar decoration"
-                      type="button"
-                    >
-                      <OrbitIcon className="h-4 w-4" />
-                    </button>
                   </div>
                 </div>
 
-                <div className="mt-5 rounded-[1.3rem] border border-white/70 bg-[linear-gradient(145deg,rgba(14,165,233,0.12),rgba(255,255,255,0.78))] p-4 dark:border-white/10 dark:bg-[linear-gradient(145deg,rgba(14,165,233,0.14),rgba(255,255,255,0.04))]">
+                <div className="mt-4.5 rounded-[1.3rem] border border-white/70 bg-[linear-gradient(145deg,rgba(14,165,233,0.12),rgba(255,255,255,0.78))] p-4 dark:border-white/10 dark:bg-[linear-gradient(145deg,rgba(14,165,233,0.14),rgba(255,255,255,0.04))]">
                   <p className="text-[0.7rem] font-medium tracking-[0.18em] text-zinc-500 uppercase dark:text-zinc-400">
                     Profile
                   </p>
-                  <h2 className="mt-2 text-[1.4rem] font-semibold tracking-tight text-zinc-950 dark:text-white">
+                  <h2 className="mt-1.5 text-[1.25rem] font-semibold tracking-tight text-zinc-950 dark:text-white">
                     {profileSummary.name}
                   </h2>
 
-                  <div className="mt-4 grid gap-2.5 sm:grid-cols-2">
+                  <div className="mt-3.5 grid gap-2.5 sm:grid-cols-2">
                     {profileMetaItems.map((item) => {
                       const Icon = item.icon;
 
@@ -339,12 +340,13 @@ export function AboutPageClient() {
                           <button
                             key={link.platform}
                             aria-label={`${link.label} ${link.username}`}
-                            className={`hover-chip-premium hover-press-soft inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500 ${toneClassName} ${link.status !== "active" ? "opacity-60" : ""}`}
+                            className={`social-chip-premium hover-press-soft group inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500 ${toneClassName} ${link.status !== "active" ? "opacity-60" : ""}`}
+                            data-platform={link.platform}
                             onClick={() => handleOpenSocial(link)}
                             title={`${link.label}: ${link.username}`}
                             type="button"
                           >
-                            <Icon className="h-5 w-5" />
+                            <Icon className="hover-icon-drift h-5 w-5" />
                           </button>
                         );
                       })}
@@ -353,24 +355,24 @@ export function AboutPageClient() {
                 </div>
               </aside>
 
-              <div className="space-y-5 sm:space-y-6">
+              <div className="space-y-5 sm:space-y-6 lg:py-2 lg:pl-0 xl:pl-2">
                 <span className="inline-flex w-fit rounded-full border border-sky-200/80 bg-sky-500/10 px-4 py-1.5 text-sm font-medium text-sky-700 dark:border-sky-300/20 dark:bg-sky-400/10 dark:text-sky-200">
                   {aboutPageContent.eyebrow}
                 </span>
                 <div className="space-y-3 sm:space-y-4">
-                  <h1 className="max-w-3xl text-[clamp(2.25rem,10vw,4.6rem)] leading-[0.95] font-semibold tracking-tight text-balance sm:text-5xl lg:text-6xl">
+                  <h1 className="max-w-4xl text-[clamp(2.25rem,10vw,4.6rem)] leading-[0.95] font-semibold tracking-tight text-balance sm:text-5xl lg:text-6xl">
                     {aboutPageContent.title}
                   </h1>
-                  <p className="max-w-3xl text-[0.98rem] leading-7 text-zinc-600 sm:text-lg dark:text-zinc-300">
+                  <p className="max-w-4xl text-[0.98rem] leading-7 text-zinc-600 sm:text-lg dark:text-zinc-300">
                     {aboutPageContent.intro}
                   </p>
                 </div>
 
-                <div className="w-full max-w-3xl rounded-[1.35rem] border border-sky-200/70 bg-sky-500/8 p-4 shadow-[0_16px_40px_rgba(14,165,233,0.08)] dark:border-sky-300/20 dark:bg-sky-400/10 sm:rounded-[1.5rem] sm:p-5">
+                <div className="w-full max-w-4xl rounded-[1.35rem] border border-sky-200/70 bg-sky-500/8 p-4 shadow-[0_16px_40px_rgba(14,165,233,0.08)] dark:border-sky-300/20 dark:bg-sky-400/10 sm:rounded-[1.5rem] sm:p-5">
                   <p className="text-xs font-medium tracking-[0.18em] text-sky-700 uppercase dark:text-sky-200">
                     Profile details
                   </p>
-                  <div className="mt-3 grid gap-3 sm:mt-4 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
+                  <div className="mt-3 grid gap-3 sm:mt-4 lg:grid-cols-2">
                     <div className="rounded-[1.15rem] border border-white/60 bg-white/70 p-4 dark:border-white/10 dark:bg-white/6 sm:rounded-[1.25rem]">
                       <p className="text-[0.7rem] font-medium tracking-[0.18em] text-zinc-500 uppercase dark:text-zinc-400">
                         Role

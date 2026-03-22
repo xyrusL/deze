@@ -88,6 +88,18 @@ const decorationRegistry = {
       ),
     },
   },
+  magicMists: {
+    badge: undefined,
+    shellClassName: "profile-decoration profile-decoration--magic-mists",
+    description: "A dreamy mist ring with a glowing magical aura.",
+    label: "Magic Mists",
+    layers: [
+      { className: "profile-decoration__layer profile-decoration__layer--magic-mist profile-decoration__layer--magic-mist-a" },
+      { className: "profile-decoration__layer profile-decoration__layer--magic-mist profile-decoration__layer--magic-mist-b" },
+      { className: "profile-decoration__layer profile-decoration__layer--magic-spark profile-decoration__layer--magic-spark-a" },
+      { className: "profile-decoration__layer profile-decoration__layer--magic-spark profile-decoration__layer--magic-spark-b" },
+    ],
+  },
   fallenAngelWhite: {
     badge: undefined,
     shellClassName: "profile-decoration profile-decoration--fallen-angel",
