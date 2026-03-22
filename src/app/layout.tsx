@@ -13,16 +13,30 @@ const jetBrainsMono = JetBrains_Mono({
   subsets: ["latin"],
 });
 
-const siteTitle = `${brand.name} | ${brand.portfolioLabel}`;
-const siteDescription = `Modern portfolio homepage showcasing selected projects by ${brand.name}.`;
+const siteTitle = "DEZE.Me | Porfolio Hub";
+const siteDescription =
+  "Welcome to DEZE.Me, my portfolio hub for the work I am building, the ideas I am exploring, and the web projects I am continuing to improve.";
 const socialImage = "/site-preview.png";
+const siteName = "DEZE";
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: siteName,
+  alternateName: "DEZE.Me",
+  url: brand.siteUrl,
+  description: siteDescription,
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(brand.siteUrl),
+  applicationName: siteName,
   title: siteTitle,
   description: siteDescription,
   alternates: {
     canonical: "/",
+  },
+  appleWebApp: {
+    title: siteName,
   },
   icons: {
     icon: "/icon.png",
@@ -34,7 +48,7 @@ export const metadata: Metadata = {
     url: brand.siteUrl,
     title: siteTitle,
     description: siteDescription,
-    siteName: brand.name,
+    siteName,
     images: [
       {
         url: socialImage,
@@ -59,6 +73,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${jetBrainsMono.variable} antialiased`}
         suppressHydrationWarning
