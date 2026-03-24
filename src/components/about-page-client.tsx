@@ -1,7 +1,9 @@
 "use client";
 
 import Image from "next/image";
+import type { ComponentType } from "react";
 import type { IconType } from "react-icons";
+import { PH } from "country-flag-icons/react/3x2";
 import {
   FaFacebookF,
   FaGithub,
@@ -17,7 +19,7 @@ import {
   HiOutlineSquares2X2,
   HiOutlineUserCircle,
 } from "react-icons/hi2";
-import { PiFlagPennantLight, PiTShirtLight } from "react-icons/pi";
+import { PiTShirtLight } from "react-icons/pi";
 import { useEffect, useMemo, useState } from "react";
 import {
   ProfileDecoration,
@@ -120,9 +122,23 @@ const socialToneClasses = {
     "border-pink-300/70 bg-pink-500/12 text-pink-700 shadow-[0_12px_26px_rgba(236,72,153,0.14)] dark:border-pink-300/20 dark:bg-pink-300/12 dark:text-pink-200",
 } as const;
 
+type MetaIconProps = {
+  className?: string;
+};
+
+function PhilippinesFlagIcon({ className }: MetaIconProps) {
+  return (
+    <PH
+      aria-hidden="true"
+      className={className}
+      title="Philippines"
+    />
+  );
+}
+
 type ProfileMetaItem = {
   className?: string;
-  icon: IconType;
+  icon: ComponentType<MetaIconProps> | IconType;
   label: string;
   value: string;
 };
@@ -137,7 +153,7 @@ const profileMetaItems: ProfileMetaItem[] = [
   {
     label: "Country",
     value: profileSummary.country,
-    icon: PiFlagPennantLight,
+    icon: PhilippinesFlagIcon,
   },
 ] as const;
 
