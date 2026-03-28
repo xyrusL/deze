@@ -74,10 +74,10 @@ export const aboutPageContent = {
     "Hello, my name is Paul. Welcome to my portfolio hub (DEZE), where I showcase all of my side projects, each serving a different purpose - from apps to a business website, a streaming site, and more.",
   email: "paul@account.deze.me",
   paragraphs: [
-    "Building everything from scratch can be a hassle for me: coming up with design ideas, figuring out how to implement them, and deciding on features and functionality. Most importantly, every project needs a clear purpose; without that, there is no reason for me to develop it in the first place.",
-    "The kind of hustle I am talking about is very different from what it used to be in a world without AI. Now, thanks to advanced technology, AI helps me a lot by reducing the time I spend brainstorming ideas, writing code, and fixing bugs. What used to take reading countless articles and digging through Stack Overflow can now start with a single AI prompt.",
-    "Even so, I still run into challenges because AI is just a tool. It cannot perfectly guess what I am thinking or what the final result should look like. That is why I still need to plan carefully and guide the process to get the outcome I want.",
-    'So, in the end, I am doing what I would call "vibe coding" with a hybrid approach - combining my own ideas and decisions with AI assistance.',
+    "I build my projects from scratch, turning my ideas into working products. The part I like least is designing the app's UI or the frontend of my site.",
+    "I start by identifying what's needed, which features to include, how users will interact with it, and other important details. This helps me understand how it should work and what it should look like. I also search online for inspiration on color palettes, layout options, fonts, and other design elements. I don't focus solely on design. I also make sure the functionality works well with the designs I create.",
+    "Starting is always the hardest part for me, even when I already have a project idea. There's a small spark that makes me want to begin, but it still feels pointless, and I have no energy.",
+    'In the middle of the work, everything feels like a struggle, and I want to stop and feel disappointed in what I am doing. But when I finally finish, the energy rushes in. I tell myself, "Damn, I did it." That happiness is different from laughing at memes on social media. It comes from the progress, effort, and hard work I put into building and completing my project.',
   ],
 } as const;
 

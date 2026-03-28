@@ -102,7 +102,7 @@ const profileSummary = {
   timeZone: "Asia/Manila",
 } as const;
 
-const avatarDecorationVariant: ProfileDecorationVariant = "catEars";
+const avatarDecorationVariant: ProfileDecorationVariant = "emberHalo";
 
 const socialIcons = {
   github: FaGithub,
@@ -167,6 +167,11 @@ export function AboutPageClient() {
     useState<ProfileDecorationVariant | null>(null);
 
   const selectedTargetUrl = useMemo(() => externalTarget?.url ?? "", [externalTarget]);
+  const [formattedTime, dayPeriod] = useMemo(() => {
+    const [time = "", period = ""] = manilaTime.split(" ");
+
+    return [time, period];
+  }, [manilaTime]);
 
   useEffect(() => {
     const formatter = new Intl.DateTimeFormat("en-PH", {
@@ -339,8 +344,15 @@ export function AboutPageClient() {
                         <p className="text-[0.63rem] leading-4 tracking-[0.16em] text-zinc-500 uppercase dark:text-zinc-400">
                           Time
                         </p>
-                        <p className="whitespace-nowrap text-sm font-medium text-zinc-800 dark:text-zinc-100">
-                          {manilaTime || "Loading..."}
+                        <p className="flex items-baseline gap-1 whitespace-nowrap text-zinc-800 dark:text-zinc-100">
+                          <span className="text-[0.96rem] font-medium tabular-nums sm:text-sm">
+                            {formattedTime || "Loading..."}
+                          </span>
+                          {dayPeriod ? (
+                            <span className="text-[0.68rem] font-semibold tracking-[0.08em] text-zinc-500 dark:text-zinc-400">
+                              {dayPeriod}
+                            </span>
+                          ) : null}
                         </p>
                       </div>
                     </div>
